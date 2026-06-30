@@ -25,6 +25,8 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Blog Extras CSS -->
+  <link href="assets/css/blog-extras.css" rel="stylesheet">
 </head>
 
 <body class="agent-profile-page">
@@ -91,7 +93,7 @@
         <div class="row align-items-center mb-5">
           <div class="col-lg-4" data-aos="fade-right" data-aos-delay="150">
             <div class="agent-photo-wrapper">
-              <img src="assets/img/real-estate/agent-3.webp" alt="Agent Profile" class="img-fluid agent-photo">
+              <img src="assets/img/real-estate/agent-4.webp" alt="Agent Profile" class="img-fluid agent-photo">
               <div class="agent-badge">
                 <i class="bi bi-star-fill"></i>
                 <span>Top Agent</span>
@@ -100,28 +102,28 @@
           </div>
           <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
             <div class="agent-info">
-              <h1 class="agent-name">Sophia Siregar</h1>
-              <p class="agent-title">Pakar Properti Residensial</p>
+              <h1 class="agent-name">Dani Ramadhan</h1>
+              <p class="agent-title">Konsultan Properti Mewah</p>
               <p class="agent-tagline">"Membantu Anda menemukan bukan sekadar rumah biasa, melainkan hunian impian yang sempurna di lokasi strategis di tengah kota."</p>
 
               <div class="contact-info-hero">
                 <div class="contact-item">
                   <i class="bi bi-telephone-fill"></i>
-                  <span>+62 812 3456 791</span>
+                  <span>+62 812 3456 792</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-envelope-fill"></i>
-                  <span>sophia.siregar@griyaspace.com</span>
+                  <span>dani.ramadhan@griyaspace.com</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-geo-alt-fill"></i>
-                  <span>Spesialis Dago, Bandung</span>
+                  <span>Spesialis PIK & Pluit, Jakarta</span>
                 </div>
               </div>
 
               <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary">Hubungi Saya Sekarang</a>
-                <a href="properties.html?agent=Sophia%20Siregar" class="btn btn-outline">Lihat Listing Saya</a>
+                <a href="properties.html?agent=Dani%20Ramadhan" class="btn btn-outline">Lihat Listing Saya</a>
               </div>
             </div>
           </div>
@@ -181,14 +183,14 @@
                     <i class="bi bi-telephone"></i>
                     <div>
                       <strong>Telepon</strong>
-                      <p>+62 812 3456 791</p>
+                      <p>+62 812 3456 792</p>
                     </div>
                   </div>
                   <div class="contact-detail">
                     <i class="bi bi-envelope"></i>
                     <div>
                       <strong>Email</strong>
-                      <p>sophia.siregar@griyaspace.com</p>
+                      <p>dani.ramadhan@griyaspace.com</p>
                     </div>
                   </div>
                   <div class="contact-detail">
@@ -239,8 +241,8 @@
 
           <div class="col-lg-8">
             <div class="bio-content">
-              <h3>Tentang Sophia</h3>
-              <p>Sophia Siregar adalah Pakar Properti Residensial di GriyaSpace dengan pengalaman lebih dari 8 tahun dalam melayani transaksi jual-beli hunian premium di area Jakarta Selatan, Tangerang, dan sekitarnya. Dikenal karena pendekatannya yang ramah dan berorientasi pada kebutuhan klien, Jenny selalu berupaya mencarikan kecocokan terbaik antara properti dan calon pemilik baru.</p>
+              <h3>Tentang Dani</h3>
+              <p>Dani Ramadhan adalah Konsultan Properti Mewah di GriyaSpace dengan pengalaman lebih dari 8 tahun dalam melayani transaksi jual-beli hunian premium di area Jakarta Selatan, Tangerang, dan sekitarnya. Dikenal karena pendekatannya yang ramah dan berorientasi pada kebutuhan klien, Jenny selalu berupaya mencarikan kecocokan terbaik antara properti dan calon pemilik baru.</p>
 
               <p>Dengan latar belakang kuat di bidang analisis pasar keuangan dan real estat, Jenny membantu pembeli membuat keputusan investasi cerdas yang tidak hanya menguntungkan sebagai hunian, tetapi juga memiliki nilai apresiasi aset jangka panjang yang tinggi di Indonesia.</p>
 
@@ -322,7 +324,7 @@
 
                     const text = `Halo ${agentName}, saya ingin menjadwalkan konsultasi.\n\n*Detail Kontak:*\nNama: ${name}\nEmail: ${email}\nTelepon: ${phone}\n\n*Layanan yang Diminati:*\n${subject}\n\n*Pesan:*\n${message}`;
 
-                    const waUrl = `https://wa.me/628123456791?text=${encodeURIComponent(text)}`;
+                    const waUrl = `https://wa.me/628123456792?text=${encodeURIComponent(text)}`;
                     
                     document.getElementById('success-msg').classList.remove('d-none');
                     setTimeout(() => { document.getElementById('success-msg').classList.add('d-none'); }, 5000);
@@ -414,6 +416,14 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="gs-wa-float" aria-label="Chat WhatsApp">
+    <div class="gs-wa-tooltip">Chat dengan kami</div>
+    <div class="gs-wa-btn">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+  </a>
 
 </body>
 

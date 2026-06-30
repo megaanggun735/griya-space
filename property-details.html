@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Daftar Properti - GriyaSpace</title>
-  <meta name="description"
-    content="Temukan beragam properti impian Anda di GriyaSpace. Mulai dari rumah cluster mewah, apartemen tengah kota, hingga ruko komersial strategis.">
-  <meta name="keywords" content="properti dijual, sewa rumah, apartemen murah, ruko strategis, griyaspace">
+  <title>Detail Properti - GriyaSpace</title>
+  <meta name="description" content="Detail lengkap properti premium di GriyaSpace. Temukan spesifikasi, fasilitas interior, denah, kalkulator biaya bulanan, dan profil agen pengelola.">
+  <meta name="keywords" content="detail properti, spesifikasi rumah, sewa penthouse, griyaspace">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -16,9 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,94 +25,11 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <style>
-    /* ── Fix alignment kartu properti ── */
-
-    /* Buat kartu setinggi penuh dalam kolom agar semua rata */
-    .properties-masonry .property-col {
-      display: flex;
-    }
-
-    .properties-masonry .property-item {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    /* property-details mengisi sisa ruang */
-    .property-details {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    /* Agent info selalu nempel di bawah */
-    .property-agent-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid rgba(0, 0, 0, .08);
-    }
-
-    /* Link wrapper agent (avatar + nama) */
-    .property-agent-info>a.property-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex: 1;
-      min-width: 0;
-      text-decoration: none;
-    }
-
-    /* Avatar bulat & seragam */
-    .agent-avatar {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-    }
-
-    .agent-avatar img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    /* Nama & jabatan tidak meluber */
-    .agent-details {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .agent-details strong {
-      display: block;
-      font-size: 13px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .agent-details span {
-      display: block;
-      font-size: 11px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: #888;
-    }
-
-    /* Tombol telepon selalu di kanan */
-    .agent-contact {
-      flex-shrink: 0;
-    }
-  </style>
+  <!-- Blog Extras CSS -->
+  <link href="assets/css/blog-extras.css" rel="stylesheet">
 </head>
 
-<body class="properties-page">
+<body class="property-details-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -128,19 +42,12 @@
           <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="iconCarrier">
             <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path
-              d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
             <path d="M4 22V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
             <path d="M20 9.5V13.5M20 22V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path
-              d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path
-              d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"
-              stroke="currentColor" stroke-width="1.5"></path>
+            <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="currentColor" stroke-width="1.5"></path>
           </g>
         </svg>
         <h1 class="sitename">GriyaSpace</h1>
@@ -150,9 +57,9 @@
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="properties.html" class="active">Properti</a></li>
+          <li><a href="properties.html">Properti</a></li>
           <li><a href="services.html">Layanan</a></li>
-          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="galery.html">Galery</a></li>
           <li><a href="blog.html">Artikel</a></li>
           <li><a href="contact.html">Kontak</a></li>
         </ul>
@@ -167,927 +74,518 @@
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Daftar Properti</h1>
+        <h1 class="mb-2 mb-lg-0">Detail Properti</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Beranda</a></li>
-            <li class="current">Properti</li>
+            <li class="current">Detail Properti</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Properties Section -->
-    <section id="properties" class="properties section">
+    <!-- Property Details Section -->
+    <section id="property-details" class="property-details section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="search-bar mb-5" data-aos="fade-up" data-aos-delay="150">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="search-wrapper">
-                <div class="row g-3">
-                  <div class="col-lg-2 col-md-6">
-                    <div class="search-field">
-                      <label for="filter-lokasi">Lokasi</label>
-                      <input type="text" id="filter-lokasi" class="form-control" placeholder="Masukkan kota atau area">
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-md-6">
-                    <div class="search-field">
-                      <label for="filter-tipe">Tipe</label>
-                      <select id="filter-tipe" class="form-select">
-                        <option value="">Semua Tipe</option>
-                        <option value="Rumah">Rumah Tinggal</option>
-                        <option value="Apartemen">Apartemen</option>
-                        <option value="Kondominium">Kondominium</option>
-                        <option value="Ruko">Ruko / Komersial</option>
-                        <option value="Townhouse">Townhouse</option>
-                        <option value="Loft">Loft / Studio</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="search-field">
-                      <label for="filter-harga">Harga</label>
-                      <select id="filter-harga" class="form-select">
-                        <option value="">Semua Harga</option>
-                        <option value="under500">Di bawah Rp 500 Juta</option>
-                        <option value="500to2000">Rp 500 Juta - Rp 2 Miliar</option>
-                        <option value="above2000">Di atas Rp 2 Miliar</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="search-field">
-                      <label>Kamar Tidur</label>
-                      <div class="bedroom-quick" id="filter-beds">
-                        <button class="bed-btn active" data-beds="any">Semua</button>
-                        <button class="bed-btn" data-beds="1">1</button>
-                        <button class="bed-btn" data-beds="2">2</button>
-                        <button class="bed-btn" data-beds="3">3</button>
-                        <button class="bed-btn" data-beds="4">4+</button>
+        <div class="row">
+          <div class="col-lg-7">
+
+            <!-- Property Hero Section -->
+            <div class="property-hero mb-5" data-aos="fade-up" data-aos-delay="200">
+              <div class="hero-image-container">
+                <div class="property-gallery-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      },
+                      "thumbs": {
+                        "swiper": ".property-thumbnails-slider"
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-7.webp" class="img-fluid hero-image" alt="Property Main Image">
+                      <div class="hero-overlay">
+                        <div class="property-badge">
+                          <span class="status-badge for-rent">Disewakan</span>
+                          <span class="featured-badge">Unggulan</span>
+                        </div>
+                        <button class="virtual-tour-btn">
+                          <i class="bi bi-play-circle"></i>
+                          Tur Virtual
+                        </button>
                       </div>
                     </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-7.webp" class="img-fluid hero-image" alt="Interior View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-9.webp" class="img-fluid hero-image" alt="Exterior View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-5.webp" class="img-fluid hero-image" alt="Features">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-8.webp" class="img-fluid hero-image" alt="More Photos">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-3.webp" class="img-fluid hero-image" alt="Exterior Detail">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-4.webp" class="img-fluid hero-image" alt="Living Area">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-2.webp" class="img-fluid hero-image" alt="Kitchen">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-5.webp" class="img-fluid hero-image" alt="Bedroom">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-1.webp" class="img-fluid hero-image" alt="Building View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-3.webp" class="img-fluid hero-image" alt="Bathroom">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-2.webp" class="img-fluid hero-image" alt="Dining Area">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-8.webp" class="img-fluid hero-image" alt="Balcony View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-1.webp" class="img-fluid hero-image" alt="Amenities">
+                    </div>
                   </div>
-                  <div class="col-lg-2 col-md-12">
-                    <div class="search-field">
-                      <label>&nbsp;</label>
-                      <button id="search-btn" class="btn btn-primary w-100 search-btn">
-                        <i class="bi bi-search"></i> Cari
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+              </div>
+
+              <div class="thumbnail-gallery mt-3">
+                <div class="property-thumbnails-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "spaceBetween": 10,
+                      "slidesPerView": 4,
+                      "freeMode": true,
+                      "watchSlidesProgress": true,
+                      "breakpoints": {
+                        "576": {
+                          "slidesPerView": 5
+                        },
+                        "768": {
+                          "slidesPerView": 6
+                        }
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-7.webp" class="img-fluid thumbnail-img" alt="Property Main Image">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-7.webp" class="img-fluid thumbnail-img" alt="Interior View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-9.webp" class="img-fluid thumbnail-img" alt="Exterior View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-5.webp" class="img-fluid thumbnail-img" alt="Features">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-8.webp" class="img-fluid thumbnail-img" alt="More Photos">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-3.webp" class="img-fluid thumbnail-img" alt="Exterior Detail">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-4.webp" class="img-fluid thumbnail-img" alt="Living Area">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-2.webp" class="img-fluid thumbnail-img" alt="Kitchen">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-5.webp" class="img-fluid thumbnail-img" alt="Bedroom">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-1.webp" class="img-fluid thumbnail-img" alt="Building View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-3.webp" class="img-fluid thumbnail-img" alt="Bathroom">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-interior-2.webp" class="img-fluid thumbnail-img" alt="Dining Area">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/property-exterior-8.webp" class="img-fluid thumbnail-img" alt="Balcony View">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/img/real-estate/features-1.webp" class="img-fluid thumbnail-img" alt="Amenities">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Property Hero -->
+
+            <!-- Property Information -->
+            <div class="property-info mb-5" data-aos="fade-up" data-aos-delay="300">
+              <div class="property-header">
+                <h1 class="property-title">Penthouse Eksklusif View Kota</h1>
+                <div class="property-meta">
+                  <span class="address"><i class="bi bi-geo-alt"></i> Skyline Suite No. 789, Kuningan, Jakarta Selatan</span>
+                  <span class="listing-id">ID Listing: #PE-2026-0847</span>
+                </div>
+              </div>
+
+              <div class="pricing-section">
+                <div class="main-price">Rp 45 Juta<span class="period">/bulan</span></div>
+                <div class="price-breakdown">
+                  <span class="deposit">Deposit Jaminan: Rp 90 Juta</span>
+                  <span class="available">Tersedia mulai: 15 Maret 2026</span>
+                </div>
+              </div>
+
+              <div class="quick-stats">
+                <div class="stat-grid">
+                  <div class="stat-card">
+                    <div class="stat-icon">
+                      <i class="bi bi-house"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">3</span>
+                      <span class="stat-label">Kamar Tidur</span>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">
+                      <i class="bi bi-droplet"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">2.5</span>
+                      <span class="stat-label">Kamar Mandi</span>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">
+                      <i class="bi bi-arrows-angle-expand"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">190</span>
+                      <span class="stat-label">Lb (m²)</span>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">
+                      <i class="bi bi-car-front"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">2</span>
+                      <span class="stat-label">Parkir</span>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">
+                      <i class="bi bi-building"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">15</span>
+                      <span class="stat-label">Lantai</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Property Information -->
+
+            <!-- Description & Features -->
+            <div class="property-details mb-5" data-aos="fade-up" data-aos-delay="400">
+              <h3>Deskripsi Properti</h3>
+              <p>Rasakan kemewahan tinggal di apartemen penthouse menawan dengan pemandangan cakrawala kota Jakarta yang megah. Dilengkapi dengan perabotan lengkap kelas premium, desain interior modern kontemporer, dan sirkulasi udara optimal di setiap sudut ruangan.</p>
+
+              <p>Berada di lantai tinggi gedung, unit ini memberikan privasi tinggi, bebas bising, dan akses langsung ke fasilitas utama gedung. Pilihan sempurna untuk profesional, ekspatriat, maupun keluarga yang menginginkan hunian elit di pusat bisnis Jakarta.</p>
+
+              <div class="features-grid mt-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Fasilitas Interior</h5>
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2"></i> Kaca setinggi langit-langit</li>
+                      <li><i class="bi bi-check2"></i> Lantai parket kayu premium</li>
+                      <li><i class="bi bi-check2"></i> Dapur gourmet modern & kitchen set</li>
+                      <li><i class="bi bi-check2"></i> Mesin cuci & pengering unit</li>
+                      <li><i class="bi bi-check2"></i> Lemari pakaian luas (Walk-in Closet)</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Fasilitas Gedung</h5>
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2"></i> Teras atap (Rooftop Garden)</li>
+                      <li><i class="bi bi-check2"></i> Pusat kebugaran (Gym) & Sauna</li>
+                      <li><i class="bi bi-check2"></i> Keamanan & Resepsionis 24/7</li>
+                      <li><i class="bi bi-check2"></i> Kolam renang indoor & outdoor</li>
+                      <li><i class="bi bi-check2"></i> Akses ramah hewan peliharaan</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Description & Features -->
+
+            <!-- Floor Plan -->
+            <div class="floor-plan-section mb-5" data-aos="fade-up" data-aos-delay="500">
+              <h3>Denah Properti</h3>
+              <div class="floor-plan-card">
+                <img src="assets/img/real-estate/property-interior-9.webp" class="img-fluid" alt="Denah Rumah">
+                <div class="plan-details">
+                  <h5>Layout Penthouse 3 Kamar Tidur</h5>
+                  <p>Konsep ruang keluarga dan ruang makan terbuka dengan akses langsung ke balkon pribadi. Kamar tidur utama dilengkapi dengan kamar mandi dalam, sedangkan kamar tidur anak memiliki akses mudah ke koridor utama.</p>
+                </div>
+              </div>
+            </div><!-- End Floor Plan -->
+
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-5">
+            <div class="sticky-sidebar">
+
+              <!-- Quick Actions -->
+              <div class="actions-card mb-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="action-buttons">
+                  <a href="#property-contact-form" class="btn btn-primary btn-lg w-100 mb-3">
+                    <i class="bi bi-calendar-check"></i>
+                    Jadwalkan Kunjungan
+                  </a>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <button class="btn btn-outline-primary w-100" onclick="alert('Properti berhasil disimpan ke favorit!'); this.querySelector('i').classList.replace('bi-heart', 'bi-heart-fill');">
+                        <i class="bi bi-heart"></i>
+                        Simpan
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-outline-primary w-100" onclick="navigator.clipboard.writeText(window.location.href); alert('Tautan properti berhasil disalin ke clipboard!');">
+                        <i class="bi bi-share"></i>
+                        Bagikan
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div><!-- End Quick Actions -->
 
-        <div class="results-header mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="results-info">
-                <h5 id="results-count">124 Properti Ditemukan</h5>
-                <p class="text-muted" id="results-desc">Menampilkan properti di area Jabodetabek & Bandung</p>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="results-controls">
-                <div class="d-flex gap-3 align-items-center justify-content-lg-end">
-                  <div class="sort-dropdown">
-                    <select id="sort-select" class="form-select form-select-sm" style="min-width: 230px;">
-                      <option value="price-asc">Harga: Terendah ke Tertinggi</option>
-                      <option value="price-desc">Harga: Tertinggi ke Terendah</option>
-                      <option value="newest">Terbaru</option>
-                      <option value="area-desc">Ukuran Terluas</option>
-                    </select>
+              <!-- Agent Card -->
+              <div class="agent-card mb-4" data-aos="fade-up" data-aos-delay="350">
+                <div class="agent-header">
+                  <div class="agent-avatar">
+                    <img src="assets/img/real-estate/agent-1.webp" class="img-fluid" alt="Agent Photo">
+                    <div class="online-status"></div>
                   </div>
-                  <div class="view-toggle">
-                    <button class="view-btn active" data-view="masonry">
-                      <i class="bi bi-grid"></i>
-                    </button>
-                    <button class="view-btn" data-view="rows">
-                      <i class="bi bi-view-stacked"></i>
-                    </button>
+                  <div class="agent-info">
+                    <h4>Jenny Adriani</h4>
+                    <p class="agent-role">Agen Properti Berlisensi</p>
+                    <div class="agent-rating">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                      <span class="rating-text">5.0 (127 ulasan)</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="properties-container">
+                <div class="agent-contact">
+                  <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <span>+62 812 3456 789</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <span>jenny.adriani@griyaspace.com</span>
+                  </div>
+                </div>
 
-          <div class="properties-masonry view-masonry active" data-aos="fade-up" data-aos-delay="250">
-            <div class="row g-4">
-
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="jakarta selatan kebayoran baru" data-tipe="Rumah"
-                data-harga="18500" data-beds="5">
-                <div class="property-item">
-                  <a href="property-details-6.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-exterior-2.webp" alt="Luxury Villa" class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge featured">Unggulan</span>
-                        <span class="status-badge sale">Dijual</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">14</span>
-                        </button>
-                      </div>
-                    </div>
+                <div class="agent-actions mt-3">
+                  <a href="https://wa.me/628123456789" class="btn btn-success w-100 mb-2" target="_blank">
+                    <i class="bi bi-telephone"></i>
+                    Hubungi Sekarang
                   </a>
-                  <div class="property-details">
-                    <a href="property-details-6.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 18,5 Miliar</div>
-                        <div class="property-type">Rumah</div>
-                      </div>
-                      <h4 class="property-title">Cluster Villa Mewah dengan Kolam Renang</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Jl. Sunset Boulevard No. 12, Kebayoran Baru, Jakarta Selatan
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>5 Kamar Tidur</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>4 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 310 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-6.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-1.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Jenny Adriani</strong>
-                          <span>GriyaSpace Premium Agent</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456789" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Property Item -->
-
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="jakarta selatan sudirman" data-tipe="Apartemen"
-                data-harga="45" data-beds="3">
-                <div class="property-item">
-                  <a href="property-details-7.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-interior-1.webp" alt="Modern Penthouse"
-                        class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge new">Baru Terdaftar</span>
-                        <span class="status-badge rent">Disewakan</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">9</span>
-                        </button>
-                      </div>
-                    </div>
+                  <a href="https://wa.me/628123456789" class="btn btn-outline w-100" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                    Kirim Pesan
                   </a>
-                  <div class="property-details">
-                    <a href="property-details-7.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 45 Juta<span>/bulan</span></div>
-                        <div class="property-type">Apartemen</div>
-                      </div>
-                      <h4 class="property-title">Penthouse Modern Pusat Kota Sudirman</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Skyline Tower Kav. 21, Sudirman, Jakarta Selatan
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>3 Kamar Tidur</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>2 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 190 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-7.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-2.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Marcus Wijaya</strong>
-                          <span>GriyaSpace Commercial</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456790" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
+                </div>
+              </div><!-- End Agent Card -->
+
+              <!-- Contact Form -->
+              <div id="property-contact-form" class="contact-form-card mb-4" data-aos="fade-up" data-aos-delay="450">
+                <h4>Minta Informasi Properti</h4>
+                <form action="javascript:void(0)" method="post" class="contact-form" onsubmit="sendToWhatsApp(this); return false;">
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required="">
+                    </div>
+                    <div class="col-12 mb-3">
+                      <input type="email" name="email" class="form-control" placeholder="Alamat Email" required="">
+                    </div>
+                    <div class="col-12 mb-3">
+                      <input type="tel" name="phone" class="form-control" placeholder="Nomor Telepon">
+                    </div>
+                    <div class="col-12 mb-3">
+                      <select name="subject" class="form-select" required="">
+                        <option value="">Saya tertarik untuk...</option>
+                        <option value="Scheduling a viewing">Menjadwalkan kunjungan</option>
+                        <option value="Getting more information">Meminta informasi lebih lanjut</option>
+                        <option value="Submitting an application">Mengajukan penawaran sewa</option>
+                      </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <textarea name="message" class="form-control" rows="4" placeholder="Tuliskan pertanyaan tambahan atau waktu kunjungan yang Anda inginkan..."></textarea>
                     </div>
                   </div>
-                </div>
-              </div><!-- End Property Item -->
 
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="bandung dago" data-tipe="Rumah" data-harga="1900"
-                data-beds="4">
-                <div class="property-item">
-                  <a href="property-details-8.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-exterior-5.webp" alt="Family Home" class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge sale">Dijual</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">11</span>
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="property-details">
-                    <a href="property-details-8.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 1,9 Miliar</div>
-                        <div class="property-type">Rumah</div>
-                      </div>
-                      <h4 class="property-title">Rumah Keluarga Nyaman & Asri</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Jl. Pinus Raya No. 45, Dago, Bandung
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>4 Kamar Tidur</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>3 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 240 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-8.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-3.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Sophia Siregar</strong>
-                          <span>GriyaSpace Bandung</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456791" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
-                    </div>
+                  <div id="success-msg" class="alert alert-success d-none mt-3 mb-3 text-center">Membuka WhatsApp... Permintaan Anda berhasil direkam!</div>
+
+                  <button type="submit" class="btn btn-primary w-100">Kirim Permintaan (via WhatsApp)</button>
+                </form>
+
+                <script>
+                  function sendToWhatsApp(form) {
+                    const name = form.name.value;
+                    const email = form.email.value;
+                    const phone = form.phone.value || '-';
+                    const subjectSelect = form.subject;
+                    const subject = subjectSelect.options[subjectSelect.selectedIndex].text;
+                    const message = form.message.value || '-';
+                    
+                    const propertyTitle = document.querySelector('.property-title') ? document.querySelector('.property-title').innerText : 'Properti di GriyaSpace';
+
+                    const text = `Halo, saya tertarik dengan *${propertyTitle}*.\n\n*Detail Kontak:*\nNama: ${name}\nEmail: ${email}\nTelepon: ${phone}\n\n*Keperluan:*\n${subject}\n\n*Pesan Tambahan:*\n${message}`;
+
+                    const waUrl = `https://wa.me/628123456789?text=${encodeURIComponent(text)}`;
+                    
+                    document.getElementById('success-msg').classList.remove('d-none');
+                    setTimeout(() => { document.getElementById('success-msg').classList.add('d-none'); }, 5000);
+                    
+                    window.open(waUrl, '_blank');
+                    form.reset();
+                  }
+                </script>
+              </div><!-- End Contact Form -->
+
+              <!-- Rental Calculator -->
+              <div class="calculator-card mb-4" data-aos="fade-up" data-aos-delay="550">
+                <h4>Kalkulator Biaya Bulanan</h4>
+                <div class="calculator-content">
+                  <div class="cost-item">
+                    <span class="cost-label">Biaya Sewa Bulanan</span>
+                    <span class="cost-value">Rp 45.000.000</span>
+                  </div>
+                  <div class="cost-item">
+                    <span class="cost-label">Listrik & Air (estimasi)</span>
+                    <span class="cost-value">Rp 1.500.000</span>
+                  </div>
+                  <div class="cost-item">
+                    <span class="cost-label">Parkir Mobil</span>
+                    <span class="cost-value">Rp 500.000</span>
+                  </div>
+                  <div class="cost-item">
+                    <span class="cost-label">Biaya Pemeliharaan</span>
+                    <span class="cost-value">Rp 300.000</span>
+                  </div>
+                  <div class="total-cost">
+                    <span class="total-label">Total Biaya Bulanan</span>
+                    <span class="total-value">Rp 47.300.000</span>
                   </div>
                 </div>
-              </div><!-- End Property Item -->
+              </div><!-- End Rental Calculator -->
 
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="tangerang serpong" data-tipe="Loft"
-                data-harga="25" data-beds="0">
-                <div class="property-item">
-                  <a href="property-details-9.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-interior-6.webp" alt="Studio Loft" class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge open">Open House</span>
-                        <span class="status-badge rent">Disewakan</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">7</span>
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="property-details">
-                    <a href="property-details-9.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 25 Juta<span>/bulan</span></div>
-                        <div class="property-type">Loft</div>
-                      </div>
-                      <h4 class="property-title">Studio Loft Minimalis Bergaya Industrial</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Cluster Warehouse No. 8, Serpong, Tangerang
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>Studio</span>
-
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>1 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 110 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-9.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-4.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Dani Ramadhan</strong>
-                          <span>GriyaSpace Tangerang</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456792" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
-                    </div>
+              <!-- Similar Properties -->
+              <div class="similar-properties" data-aos="fade-up" data-aos-delay="650">
+                <h4>Properti Sejenis</h4>
+                <div class="similar-property-item">
+                  <img src="assets/img/real-estate/property-exterior-4.webp" class="img-fluid" alt="Similar Property">
+                  <div class="similar-info">
+                    <h6>Apartemen Mewah Pusat Kota</h6>
+                    <p class="similar-price">Rp 40 Juta/bulan</p>
+                    <p class="similar-specs">2 KT • 2 KM • Lb: 150 m²</p>
                   </div>
                 </div>
-              </div><!-- End Property Item -->
 
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="jakarta utara pantai indah kapuk pik"
-                data-tipe="Townhouse" data-harga="2800" data-beds="3">
-                <div class="property-item">
-                  <a href="property-details-10.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-exterior-7.webp" alt="Townhouse" class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge sale">Dijual</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">16</span>
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="property-details">
-                    <a href="property-details-10.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 2,8 Miliar</div>
-                        <div class="property-type">Townhouse</div>
-                      </div>
-                      <h4 class="property-title">Townhouse Minimalis Dekat Danau</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Jl. Marina Indah Kav. 3, Pantai Indah Kapuk, Jakarta Utara
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>3 Kamar Tidur</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>2 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 180 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-10.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-1.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Jenny Adriani</strong>
-                          <span>GriyaSpace Premium Agent</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456789" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
-                    </div>
+                <div class="similar-property-item">
+                  <img src="assets/img/real-estate/property-interior-6.webp" class="img-fluid" alt="Similar Property">
+                  <div class="similar-info">
+                    <h6>Suite Penthouse Modern</h6>
+                    <p class="similar-price">Rp 50 Juta/bulan</p>
+                    <p class="similar-specs">3 KT • 2.5 KM • Lb: 210 m²</p>
                   </div>
                 </div>
-              </div><!-- End Property Item -->
-
-              <div class="col-lg-4 col-md-6 property-col" data-lokasi="jakarta selatan kuningan" data-tipe="Kondominium"
-                data-harga="2200" data-beds="2">
-                <div class="property-item">
-                  <a href="property-details-11.html" class="property-link">
-                    <div class="property-image-wrapper">
-                      <img src="assets/img/real-estate/property-interior-8.webp" alt="Condo" class="img-fluid">
-                      <div class="property-status">
-                        <span class="status-badge reduced">Turun Harga</span>
-                        <span class="status-badge sale">Dijual</span>
-                      </div>
-                      <div class="property-actions">
-                        <button class="action-btn favorite-btn" data-toggle="tooltip" title="Simpan ke Favorit">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                        <button class="action-btn share-btn" data-toggle="tooltip" title="Bagikan">
-                          <i class="bi bi-share"></i>
-                        </button>
-                        <button class="action-btn gallery-btn" data-toggle="tooltip" title="Galeri Foto">
-                          <i class="bi bi-images"></i>
-                          <span class="gallery-count">12</span>
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="property-details">
-                    <a href="property-details-11.html" class="property-link">
-                      <div class="property-header">
-                        <div class="property-price">Rp 2,2 Miliar <span class="old-price">Rp 2,5 Miliar</span></div>
-                        <div class="property-type">Kondominium</div>
-                      </div>
-                      <h4 class="property-title">Kondominium Mewah dengan View Kota</h4>
-                      <p class="property-address">
-                        <i class="bi bi-geo-alt"></i>
-                        Skyline Suite No. 789, Kuningan, Jakarta Selatan
-                      </p>
-                      <div class="property-specs">
-                        <div class="spec-item">
-                          <i class="bi bi-house-door"></i>
-                          <span>2 Kamar Tidur</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-droplet"></i>
-                          <span>2 Kamar Mandi</span>
-                        </div>
-                        <div class="spec-item">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                          <span>Lb: 130 m²</span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="property-agent-info">
-                      <a href="property-details-11.html" class="property-link">
-                        <div class="agent-avatar">
-                          <img src="assets/img/real-estate/agent-2.webp" alt="Agent">
-                        </div>
-                        <div class="agent-details">
-                          <strong>Marcus Wijaya</strong>
-                          <span>GriyaSpace Commercial</span>
-                        </div>
-                      </a>
-                      <div class="agent-contact">
-                        <a href="tel:+628123456790" class="contact-btn">
-                          <i class="bi bi-telephone"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Property Item -->
-
+              </div><!-- End Similar Properties -->
 
             </div>
-          </div>
-
-          <div class="properties-rows view-rows">
-            <div class="row g-4">
-
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-exterior-2.webp" alt="Luxury Villa" class="img-fluid">
-                        <div class="property-status">
-                          <span class="status-badge featured">Unggulan</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Cluster Villa Mewah dengan Kolam Renang</h4>
-                                <div class="property-type-price">
-                                  <span class="property-type">Rumah</span>
-                                  <span class="property-price">Rp 18,5 Miliar</span>
-                                </div>
-                              </div>
-                              <p class="property-address">
-                                <i class="bi bi-geo-alt"></i>
-                                Jl. Sunset Boulevard No. 12, Kebayoran Baru, Jakarta Selatan
-                              </p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 5 KT</span>
-                                <span><i class="bi bi-droplet"></i> 4 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 310 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-1.webp" alt="Agent" class="agent-avatar">
-                                <span>Jenny Adriani, GriyaSpace Premium Agent</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn">
-                                  <i class="bi bi-heart"></i> Simpan
-                                </button>
-                                <button class="action-btn contact-btn">
-                                  <i class="bi bi-telephone"></i> Telp
-                                </button>
-                                <button class="action-btn gallery-btn">
-                                  <i class="bi bi-images"></i> 14 Foto
-                                </button>
-                              </div>
-                              <a href="property-details-6.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Property Row Item -->
-
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-interior-1.webp" alt="Modern Apartment"
-                          class="img-fluid">
-                        <div class="property-status">
-                          <span class="status-badge new">Baru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Penthouse Modern Pusat Kota Sudirman</h4>
-                                <div class="property-type-price">
-                                  <span class="property-type">Apartemen</span>
-                                  <span class="property-price">Rp 45 Juta<small>/bulan</small></span>
-                                </div>
-                              </div>
-                              <p class="property-address">
-                                <i class="bi bi-geo-alt"></i>
-                                Skyline Tower Kav. 21, Sudirman, Jakarta Selatan
-                              </p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 3 KT</span>
-                                <span><i class="bi bi-droplet"></i> 2 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 190 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-2.webp" alt="Agent" class="agent-avatar">
-                                <span>Marcus Wijaya, GriyaSpace Commercial</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn">
-                                  <i class="bi bi-heart"></i> Simpan
-                                </button>
-                                <button class="action-btn contact-btn">
-                                  <i class="bi bi-telephone"></i> Telp
-                                </button>
-                                <button class="action-btn gallery-btn">
-                                  <i class="bi bi-images"></i> 9 Foto
-                                </button>
-                              </div>
-                              <a href="property-details-7.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Property Row Item -->
-
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-exterior-5.webp" alt="Family Home" class="img-fluid">
-                        <div class="property-status">
-                          <span class="status-badge sale">Dijual</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Rumah Keluarga Nyaman & Asri</h4>
-                                <div class="property-type-price">
-                                  <span class="property-type">Rumah</span>
-                                  <span class="property-price">Rp 1,9 Miliar</span>
-                                </div>
-                              </div>
-                              <p class="property-address">
-                                <i class="bi bi-geo-alt"></i>
-                                Jl. Pinus Raya No. 45, Dago, Bandung
-                              </p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 4 KT</span>
-                                <span><i class="bi bi-droplet"></i> 3 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 240 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-3.webp" alt="Agent" class="agent-avatar">
-                                <span>Sophia Siregar, GriyaSpace Bandung</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn">
-                                  <i class="bi bi-heart"></i> Simpan
-                                </button>
-                                <button class="action-btn contact-btn">
-                                  <i class="bi bi-telephone"></i> Telp
-                                </button>
-                                <button class="action-btn gallery-btn">
-                                  <i class="bi bi-images"></i> 11 Foto
-                                </button>
-                              </div>
-                              <a href="property-details-8.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Property Row Item -->
-
-              <!-- Sample Properti Mega (Row View) -->
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-exterior-3.webp" alt="Ruko Komersial"
-                          class="img-fluid">
-                        <div class="property-status"><span class="status-badge sale">Dijual</span></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Ruko Strategis 2 Lantai Tebet</h4>
-                                <div class="property-type-price"><span class="property-type">Ruko</span><span
-                                    class="property-price">Rp 1,5 Miliar</span></div>
-                              </div>
-                              <p class="property-address"><i class="bi bi-geo-alt"></i> Jl. Tebet Raya No. 10, Jakarta
-                                Selatan</p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 0 KT</span>
-                                <span><i class="bi bi-droplet"></i> 2 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 120 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-1.webp" alt="Agent" class="agent-avatar">
-                                <span>Mega, GriyaSpace Agent</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn"><i class="bi bi-heart"></i> Simpan</button>
-                                <button class="action-btn contact-btn"><i class="bi bi-telephone"></i> Telp</button>
-                                <button class="action-btn gallery-btn"><i class="bi bi-images"></i> 5 Foto</button>
-                              </div>
-                              <a href="property-details.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-exterior-4.webp" alt="Ruko Minimalis"
-                          class="img-fluid">
-                        <div class="property-status"><span class="status-badge rent">Disewakan</span></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Sewa Ruko Minimalis Bekasi</h4>
-                                <div class="property-type-price"><span class="property-type">Ruko</span><span
-                                    class="property-price">Rp 150 Juta<small>/tahun</small></span></div>
-                              </div>
-                              <p class="property-address"><i class="bi bi-geo-alt"></i> Jl. Kalimalang Raya, Bekasi
-                                Barat</p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 0 KT</span>
-                                <span><i class="bi bi-droplet"></i> 1 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 80 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-2.webp" alt="Agent" class="agent-avatar">
-                                <span>Mega, GriyaSpace Agent</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn"><i class="bi bi-heart"></i> Simpan</button>
-                                <button class="action-btn contact-btn"><i class="bi bi-telephone"></i> Telp</button>
-                                <button class="action-btn gallery-btn"><i class="bi bi-images"></i> 3 Foto</button>
-                              </div>
-                              <a href="property-details.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="property-row-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <div class="property-image-wrapper">
-                        <img src="assets/img/real-estate/property-exterior-8.webp" alt="Ruko Premium" class="img-fluid">
-                        <div class="property-status"><span class="status-badge featured">Unggulan</span><span
-                            class="status-badge sale">Dijual</span></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="property-row-content">
-                        <div class="row align-items-center">
-                          <div class="col-lg-8">
-                            <div class="property-info">
-                              <div class="property-header">
-                                <h4 class="property-title">Ruko Premium Boulevard Kelapa Gading</h4>
-                                <div class="property-type-price"><span class="property-type">Ruko</span><span
-                                    class="property-price">Rp 4,5 Miliar</span></div>
-                              </div>
-                              <p class="property-address"><i class="bi bi-geo-alt"></i> Boulevard Raya, Kelapa Gading,
-                                Jakarta Utara</p>
-                              <div class="property-specs">
-                                <span><i class="bi bi-house-door"></i> 0 KT</span>
-                                <span><i class="bi bi-droplet"></i> 3 KM</span>
-                                <span><i class="bi bi-arrows-angle-expand"></i> Lb: 250 m²</span>
-                              </div>
-                              <div class="property-agent">
-                                <img src="assets/img/real-estate/agent-3.webp" alt="Agent" class="agent-avatar">
-                                <span>Mega, GriyaSpace Agent</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="property-actions">
-                              <div class="action-buttons">
-                                <button class="action-btn favorite-btn"><i class="bi bi-heart"></i> Simpan</button>
-                                <button class="action-btn contact-btn"><i class="bi bi-telephone"></i> Telp</button>
-                                <button class="action-btn gallery-btn"><i class="bi bi-images"></i> 8 Foto</button>
-                              </div>
-                              <a href="property-details.html" class="btn btn-primary view-details-btn">Detail
-                                Selengkapnya</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Sample Properti Mega (Row View) -->
-
-            </div>
-          </div>
+          </div><!-- End Sidebar -->
 
         </div>
 
-        <nav class="pagination-wrapper mt-5" data-aos="fade-up" data-aos-delay="350">
-          <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6">
-              <div class="pagination-info">
-                <p>Menampilkan <strong>1-6</strong> dari <strong>124</strong> properti</p>
+        <!-- Location Section -->
+        <div class="location-section mt-5" data-aos="fade-up" data-aos-delay="700">
+          <h3>Lokasi &amp; Lingkungan Sekitar</h3>
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2!2d106.83!3d-6.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTMnMTIuMCJTIDEwNsKwNDknNDguMCJF!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
               </div>
             </div>
-            <div class="col-lg-6">
-              <ul class="pagination justify-content-lg-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">
-                    <i class="bi bi-chevron-left"></i>
-                  </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                <li class="page-item"><a class="page-link" href="#">21</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
-                    <i class="bi bi-chevron-right"></i>
-                  </a>
-                </li>
-              </ul>
+            <div class="col-lg-4">
+              <div class="neighborhood-info">
+                <h5>Fasilitas Sekitar Area</h5>
+                <div class="poi-item">
+                  <i class="bi bi-mortarboard"></i>
+                  <div class="poi-content">
+                    <span class="poi-name">Universitas Katolik Atma Jaya</span>
+                    <span class="poi-distance">10 menit berkendara</span>
+                  </div>
+                </div>
+                <div class="poi-item">
+                  <i class="bi bi-cup-hot"></i>
+                  <div class="poi-content">
+                    <span class="poi-name">Lotte Shopping Avenue</span>
+                    <span class="poi-distance">2 menit jalan kaki</span>
+                  </div>
+                </div>
+                <div class="poi-item">
+                  <i class="bi bi-tree"></i>
+                  <div class="poi-content">
+                    <span class="poi-name">Taman Kota Kuningan</span>
+                    <span class="poi-distance">3 menit jalan kaki</span>
+                  </div>
+                </div>
+                <div class="poi-item">
+                  <i class="bi bi-train-lightrail-front"></i>
+                  <div class="poi-content">
+                    <span class="poi-name">Stasiun LRT Kuningan</span>
+                    <span class="poi-distance">5 menit jalan kaki</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
+        </div><!-- End Location Section -->
 
       </div>
 
-    </section><!-- /Properties Section -->
+    </section><!-- /Property Details Section -->
 
   </main>
 
@@ -1099,8 +597,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">GriyaSpace</span>
           </a>
-          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik
-            di seluruh Indonesia secara aman, transparan, dan profesional.</p>
+          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik di seluruh Indonesia secara aman, transparan, dan profesional.</p>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
@@ -1120,16 +617,16 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Layanan Kami</h4>
-          <ul>
-            <li><a href="properties.html">Pencarian Properti</a></li>
-            <li><a href="service-details.html">Penilaian Properti</a></li>
-            <li><a href="properties.html">Sewa Properti</a></li>
-            <li><a href="contact.html">Konsultasi Investasi</a></li>
-            <li><a href="contact.html">Pengajuan KPR</a></li>
-          </ul>
-        </div>
+                            <div class="col-lg-2 col-6 footer-links">
+            <h4>Layanan Kami</h4>
+            <ul>
+              <li><a href="properties.html">Pencarian Properti</a></li>
+              <li><a href="service-details.html">Penilaian Properti</a></li>
+              <li><a href="properties.html">Sewa Properti</a></li>
+              <li><a href="contact.html">Konsultasi Investasi</a></li>
+              <li><a href="contact.html">Pengajuan KPR</a></li>
+            </ul>
+          </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Hubungi Kami</h4>
@@ -1150,8 +647,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1166,324 +662,19 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Property Filter JS -->
-  <script>
-    (function () {
-      // ── Refs ──────────────────────────────────────────────
-      const inputLokasi = document.getElementById('filter-lokasi');
-      const selectTipe = document.getElementById('filter-tipe');
-      const selectHarga = document.getElementById('filter-harga');
-      const bedBtns = document.querySelectorAll('#filter-beds .bed-btn');
-      const searchBtn = document.getElementById('search-btn');
-      const resultsCount = document.getElementById('results-count');
-      const resultsDesc = document.getElementById('results-desc');
-      const sortSelect = document.getElementById('sort-select');
-      const paginationInfo = document.querySelector('.pagination-info p');
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="gs-wa-float" aria-label="Chat WhatsApp">
+    <div class="gs-wa-tooltip">Chat dengan kami</div>
+    <div class="gs-wa-btn">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+  </a>
 
-      // All property cards (masonry view only; row view is duplicate)
-      const propertyCols = document.querySelectorAll('.properties-masonry .property-col');
-      const propertyRows = document.querySelectorAll('.properties-rows .col-12');
-
-      const masonryRow = document.querySelector('.properties-masonry .row');
-      const rowsRow = document.querySelector('.properties-rows .row');
-
-      propertyCols.forEach((col, i) => {
-        col.dataset.index = i;
-        const match = col.innerHTML.match(/Lb:\s*([\d\.]+)\s*m²/i);
-        col.dataset.area = match ? match[1].replace(/\./g, '') : 0;
-      });
-
-      propertyRows.forEach((row, i) => {
-        row.dataset.index = i;
-      });
-
-      // ── View Toggle Logic ────────────────────────────────
-      const viewBtns = document.querySelectorAll('.view-toggle .view-btn');
-      const viewMasonry = document.querySelector('.view-masonry');
-      const viewRows = document.querySelector('.view-rows');
-
-      // Ensure initial state based on active class
-      if (viewRows && !viewRows.classList.contains('active')) {
-        viewRows.style.display = 'none';
-      }
-
-      viewBtns.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          viewBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-
-          if (this.dataset.view === 'masonry') {
-            if (viewMasonry) {
-              viewMasonry.classList.add('active');
-              viewMasonry.style.display = 'block';
-            }
-            if (viewRows) {
-              viewRows.classList.remove('active');
-              viewRows.style.display = 'none';
-            }
-          } else {
-            if (viewMasonry) {
-              viewMasonry.classList.remove('active');
-              viewMasonry.style.display = 'none';
-            }
-            if (viewRows) {
-              viewRows.classList.add('active');
-              viewRows.style.display = 'block';
-            }
-          }
-        });
-      });
-
-      // Empty state element – created once
-      let emptyState = document.querySelector('.no-results-msg');
-      if (!emptyState) {
-        emptyState = document.createElement('div');
-        emptyState.className = 'no-results-msg col-12 text-center py-5';
-        emptyState.style.cssText = 'display:none;';
-        emptyState.innerHTML = `
-        <div style="padding:3rem 1rem;">
-          <i class="bi bi-search" style="font-size:3rem;color:#ccc;display:block;margin-bottom:1rem;"></i>
-          <h5 style="color:#666;margin-bottom:.5rem;">Tidak Ada Properti Ditemukan</h5>
-          <p style="color:#999;">Coba ubah filter pencarian Anda untuk hasil yang lebih luas.</p>
-          <button id="reset-filter-btn" class="btn btn-outline-success mt-2">
-            <i class="bi bi-arrow-counterclockwise"></i> Reset Filter
-          </button>
-        </div>`;
-        document.querySelector('.properties-masonry .row').appendChild(emptyState);
-        emptyState.querySelector('#reset-filter-btn').addEventListener('click', resetFilters);
-      }
-
-      // ── Active beds selection ────────────────────────────
-      let activeBeds = 'any';
-      bedBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          bedBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeBeds = btn.dataset.beds;
-          runFilter(); // langsung filter saat diklik
-        });
-      });
-
-      // ── Enter key on lokasi input ────────────────────────
-      inputLokasi.addEventListener('keydown', e => {
-        if (e.key === 'Enter') runFilter();
-      });
-
-      // ── Search button click ──────────────────────────────
-      searchBtn.addEventListener('click', runFilter);
-      if (sortSelect) sortSelect.addEventListener('change', runFilter);
-
-      // ── Core filter function ────────────────────────────
-      function runFilter() {
-        const keyword = inputLokasi.value.trim().toLowerCase();
-        const tipe = selectTipe.value.toLowerCase();
-        const harga = selectHarga.value;   // 'under500' | '500to2000' | 'above2000' | ''
-        const beds = activeBeds;           // 'any' | '1'..'4'
-
-        let visible = 0;
-
-        propertyCols.forEach((col, index) => {
-          const colLokasi = (col.dataset.lokasi || '').toLowerCase();
-          const colTipe = (col.dataset.tipe || '').toLowerCase();
-          const colHarga = parseFloat(col.dataset.harga || 0);  // in Juta
-          const colBeds = parseInt(col.dataset.beds || 0, 10);
-
-          // ── Lokasi match ──
-          const lokasiOk = !keyword || colLokasi.includes(keyword);
-
-          // ── Tipe match ──
-          const tipeOk = !tipe || colTipe === tipe.toLowerCase();
-
-          // ── Harga match (harga data stored in Juta) ──
-          let hargaOk = true;
-          if (harga === 'under500') hargaOk = colHarga < 500;
-          else if (harga === '500to2000') hargaOk = colHarga >= 500 && colHarga <= 2000;
-          else if (harga === 'above2000') hargaOk = colHarga > 2000;
-
-          // ── Beds match ──
-          // "1","2","3" = exact match | "4" = 4 atau lebih
-          let bedsOk = true;
-          if (beds !== 'any') {
-            const minBeds = parseInt(beds, 10);
-            if (minBeds === 4) {
-              bedsOk = colBeds >= 4;       // 4+ : semua yg punya 4 kamar atau lebih
-            } else {
-              bedsOk = colBeds === minBeds; // 1,2,3 : exact match
-            }
-          }
-
-          const show = lokasiOk && tipeOk && hargaOk && bedsOk;
-
-          // Animate show/hide
-          if (show) {
-            col.style.display = '';
-            col.style.animation = 'fadeInCard .35s ease both';
-            if (propertyRows[index]) {
-              propertyRows[index].style.display = '';
-              propertyRows[index].style.animation = 'fadeInCard .35s ease both';
-            }
-            visible++;
-          } else {
-            col.style.display = 'none';
-            if (propertyRows[index]) {
-              propertyRows[index].style.display = 'none';
-            }
-          }
-        });
-
-        // ── Sorting ──
-        const sortBy = sortSelect ? sortSelect.value : 'newest';
-
-        const sortedCols = Array.from(propertyCols).sort((a, b) => {
-          if (sortBy === 'price-asc') return parseFloat(a.dataset.harga || 0) - parseFloat(b.dataset.harga || 0);
-          if (sortBy === 'price-desc') return parseFloat(b.dataset.harga || 0) - parseFloat(a.dataset.harga || 0);
-          if (sortBy === 'area-desc') return parseFloat(b.dataset.area || 0) - parseFloat(a.dataset.area || 0);
-          return parseInt(a.dataset.index) - parseInt(b.dataset.index);
-        });
-
-        sortedCols.forEach(col => masonryRow.appendChild(col));
-        if (emptyState) masonryRow.appendChild(emptyState);
-
-        const sortedRows = Array.from(propertyRows).sort((a, b) => {
-          const colA = propertyCols[a.dataset.index];
-          const colB = propertyCols[b.dataset.index];
-          if (!colA || !colB) return 0;
-          if (sortBy === 'price-asc') return parseFloat(colA.dataset.harga || 0) - parseFloat(colB.dataset.harga || 0);
-          if (sortBy === 'price-desc') return parseFloat(colB.dataset.harga || 0) - parseFloat(colA.dataset.harga || 0);
-          if (sortBy === 'area-desc') return parseFloat(colA.dataset.area || 0) - parseFloat(colB.dataset.area || 0);
-          return parseInt(a.dataset.index) - parseInt(b.dataset.index);
-        });
-        sortedRows.forEach(row => rowsRow.appendChild(row));
-
-        // ── Update result count ──
-        resultsCount.textContent = visible + ' Properti Ditemukan';
-
-        // ── Update description ──
-        const parts = [];
-        if (keyword) parts.push('lokasi "' + inputLokasi.value.trim() + '"');
-        if (tipe) parts.push('tipe ' + selectTipe.options[selectTipe.selectedIndex].text);
-        if (harga) parts.push(selectHarga.options[selectHarga.selectedIndex].text);
-        if (beds !== 'any') parts.push(beds + '+ kamar tidur');
-        resultsDesc.textContent = parts.length
-          ? 'Filter: ' + parts.join(' · ')
-          : 'Menampilkan semua properti tersedia';
-
-        if (paginationInfo) {
-          paginationInfo.innerHTML = `Menampilkan <strong>${visible > 0 ? 1 : 0}-${visible}</strong> dari <strong>${visible}</strong> properti`;
-        }
-
-        // ── Empty state ──
-        emptyState.style.display = visible === 0 ? '' : 'none';
-      }
-
-      // ── Reset filter ─────────────────────────────────────
-      function resetFilters() {
-        inputLokasi.value = '';
-        selectTipe.value = '';
-        selectHarga.value = '';
-        activeBeds = 'any';
-        bedBtns.forEach(b => b.classList.remove('active'));
-        document.querySelector('#filter-beds .bed-btn[data-beds="any"]').classList.add('active');
-        propertyCols.forEach((col, index) => {
-          col.style.display = '';
-          col.style.animation = 'fadeInCard .35s ease both';
-          if (propertyRows[index]) {
-            propertyRows[index].style.display = '';
-            propertyRows[index].style.animation = 'fadeInCard .35s ease both';
-          }
-        });
-        resultsCount.textContent = propertyCols.length + ' Properti Ditemukan';
-        resultsDesc.textContent = 'Menampilkan semua properti tersedia';
-        if (paginationInfo) {
-          paginationInfo.innerHTML = `Menampilkan <strong>${propertyCols.length > 0 ? 1 : 0}-${propertyCols.length}</strong> dari <strong>${propertyCols.length}</strong> properti`;
-        }
-        emptyState.style.display = 'none';
-      }
-
-      // ── Keyframe animation ───────────────────────────────
-      if (!document.getElementById('filter-anim-style')) {
-        const style = document.createElement('style');
-        style.id = 'filter-anim-style';
-        style.textContent = `
-        @keyframes fadeInCard {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .bed-btn.active {
-          background: var(--accent-color, #8B7355) !important;
-          color: #fff !important;
-          border-color: var(--accent-color, #8B7355) !important;
-        }
-      `;
-        document.head.appendChild(style);
-      }
-
-      // ── Auto-filter dari URL Parameters (Pencarian Index) ──
-      const urlParams = new URLSearchParams(window.location.search);
-      let shouldFilter = false;
-
-      if (urlParams.has('location')) {
-        inputLokasi.value = urlParams.get('location');
-        shouldFilter = true;
-      }
-      if (urlParams.has('property_type')) {
-        selectTipe.value = urlParams.get('property_type');
-        shouldFilter = true;
-      }
-      if (urlParams.has('price_range')) {
-        selectHarga.value = urlParams.get('price_range');
-        shouldFilter = true;
-      }
-      if (urlParams.has('bedrooms')) {
-        const bParam = urlParams.get('bedrooms');
-        bedBtns.forEach(b => b.classList.remove('active'));
-        let matchedBtn = Array.from(bedBtns).find(b => b.dataset.beds === bParam);
-        if (!matchedBtn) matchedBtn = document.querySelector('#filter-beds .bed-btn[data-beds="any"]');
-        matchedBtn.classList.add('active');
-        activeBeds = matchedBtn.dataset.beds;
-        shouldFilter = true;
-      }
-
-      // Selalu jalankan filter di awal untuk menghitung total properti aktual
-      setTimeout(runFilter, 50);
-
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const agentQuery = urlParams.get('agent');
-      if (agentQuery) {
-        const decodedAgent = agentQuery.toLowerCase();
-        const resultsCount = document.getElementById('results-count');
-        const resultsDesc = document.getElementById('results-desc');
-
-        const properties = document.querySelectorAll('.property-col, .property-row');
-        let visibleCount = 0;
-        properties.forEach(prop => {
-          const agentNameEl = prop.querySelector('.agent-details strong');
-          if (agentNameEl) {
-            const agentName = agentNameEl.innerText.toLowerCase();
-            if (!agentName.includes(decodedAgent)) {
-              prop.style.display = 'none';
-              // Also add a special class to prevent masonry/list layout scripts from overriding it
-              prop.classList.add('d-none');
-            } else {
-              prop.style.display = '';
-              prop.classList.remove('d-none');
-              visibleCount++;
-            }
-          }
-        });
-        if (resultsCount) resultsCount.innerText = (visibleCount / 2) + " Properti Ditemukan"; // Divided by 2 if both masonry and rows are present and duplicate
-        // Actually let's just count unique visible items if they are duplicated. 
-        // Let's just say "Properti Ditemukan".
-        if (resultsDesc) resultsDesc.innerText = "Menampilkan properti khusus dari agen: " + agentQuery;
-      }
-    });
-  </script>
 </body>
 
 </html>
+
+
+
+
+

@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Galeri Properti - GriyaSpace</title>
-  <meta name="description" content="Jelajahi koleksi foto properti premium GriyaSpace. Dari eksterior mewah, interior modern, hingga fasilitas gedung terlengkap.">
-  <meta name="keywords" content="galeri properti, foto rumah, interior mewah, eksterior properti, griyaspace">
+  <title>GriyaSpace - Portal Properti & Perumahan Premium Indonesia</title>
+  <meta name="description"
+    content="Temukan hunian impian Anda bersama GriyaSpace. Pilihan cluster perumahan eksklusif, apartemen modern, dan ruko strategis di Indonesia.">
+  <meta name="keywords" content="properti, perumahan, rumah dijual, apartemen, griyaspace, cluster, kpr">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,7 +16,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,542 +28,37 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Blog Extras CSS -->
+  <link href="assets/css/blog-extras.css" rel="stylesheet">
 
-  <style>
-    /* ══════════════════════════════════════
-       GALLERY PAGE STYLES
-    ══════════════════════════════════════ */
-
-    /* Hero Banner */
-    .gallery-hero {
-      position: relative;
-      min-height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    }
-
-    .gallery-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(var(--accent-color-rgb, 184, 145, 68), 0.15) 0%,
-        transparent 60%
-      );
-      z-index: 1;
-    }
-
-    .gallery-hero-bg {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      opacity: 0.25;
-      filter: saturate(0.4);
-    }
-
-    .gallery-hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .gallery-hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: #fff;
-      padding: 2rem;
-    }
-
-    .gallery-hero-content .badge-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(var(--accent-color-rgb, 184, 145, 68), 0.2);
-      border: 1px solid rgba(var(--accent-color-rgb, 184, 145, 68), 0.4);
-      color: var(--accent-color);
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    .gallery-hero-content h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .gallery-hero-content h1 span {
-      color: var(--accent-color);
-    }
-
-    .gallery-hero-content p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    .gallery-hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .gallery-hero-stats .stat {
-      text-align: center;
-    }
-
-    .gallery-hero-stats .stat-number {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--accent-color);
-      line-height: 1;
-    }
-
-    .gallery-hero-stats .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-      margin-top: 0.3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Filter Tabs ── */
-    .gallery-filter-wrapper {
-      background: var(--surface-color);
-      padding: 1.5rem 0;
-      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
-      position: sticky;
-      top: 70px;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-
-    .gallery-filter-tabs {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .filter-tab {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.3rem;
-      border-radius: 50px;
-      border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-      background: transparent;
-      color: var(--default-color);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.28s ease;
-    }
-
-    .filter-tab:hover {
-      border-color: var(--accent-color);
-      color: var(--accent-color);
-    }
-
-    .filter-tab.active {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(var(--accent-color-rgb, 184, 145, 68), 0.35);
-    }
-
-    .filter-tab .tab-count {
-      background: rgba(255,255,255,0.25);
-      padding: 0.1rem 0.45rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-    }
-
-    .filter-tab:not(.active) .tab-count {
-      background: color-mix(in srgb, var(--default-color), transparent 88%);
-    }
-
-    /* ── Gallery Grid ── */
-    .gallery-section {
-      padding: 3rem 0 5rem;
-    }
-
-    .gallery-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 992px) {
-      .gallery-item { flex: 0 0 calc(50% - 0.625rem) !important; max-width: calc(50% - 0.625rem); }
-    }
-    @media (max-width: 576px) {
-      .gallery-item { flex: 0 0 100% !important; max-width: 100%; }
-    }
-
-    .gallery-item {
-      flex: 0 0 calc(33.333% - 0.834rem);
-      max-width: calc(33.333% - 0.834rem);
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      display: block;
-    }
-
-    .gallery-item.hidden {
-      display: none;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-item-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.72) 0%,
-        rgba(0,0,0,0.15) 50%,
-        transparent 100%
-      );
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.4rem;
-    }
-
-    .gallery-item:hover .gallery-item-overlay {
-      opacity: 1;
-    }
-
-    .gallery-item-info {
-      transform: translateY(10px);
-      transition: transform 0.35s ease;
-    }
-
-    .gallery-item:hover .gallery-item-info {
-      transform: translateY(0);
-    }
-
-    .gallery-item-category {
-      display: inline-block;
-      background: var(--accent-color);
-      color: #fff;
-      padding: 0.2rem 0.7rem;
-      border-radius: 50px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
-
-    .gallery-item-title {
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .gallery-item-zoom {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      opacity: 0;
-      transform: scale(0.7);
-      transition: all 0.3s ease;
-    }
-
-    .gallery-item:hover .gallery-item-zoom {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* ── Lightbox Modal ── */
-    .gallery-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.95);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(8px);
-    }
-
-    .gallery-lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-inner {
-      position: relative;
-      max-width: 1200px;
-      width: 95vw;
-      max-height: 95vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-img-wrapper {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-      max-height: 85vh;
-    }
-
-    .lightbox-img-wrapper img {
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      display: block;
-    }
-
-    .lightbox-info-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-      padding: 1.5rem 1.5rem 1.2rem;
-      color: #fff;
-    }
-
-    .lightbox-close {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: #fff;
-      font-size: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10;
-    }
-
-    .lightbox-close:hover {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
-    }
-
-    .lightbox-nav {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10;
-    }
-
-    .lightbox-nav:hover {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
-    }
-
-    .lightbox-prev { left: 1rem; }
-    .lightbox-next { right: 1rem; }
-
-    .lightbox-counter {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      color: #fff;
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      z-index: 10;
-    }
-
-    /* ── CTA Section ── */
-    .gallery-cta {
-      background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), #000 25%) 100%);
-      padding: 4.5rem 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gallery-cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -20%;
-      width: 500px;
-      height: 500px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 50%;
-    }
-
-    .gallery-cta::after {
-      content: '';
-      position: absolute;
-      bottom: -40%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 50%;
-    }
-
-    .gallery-cta h2 {
-      color: #fff;
-      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .gallery-cta p {
-      color: rgba(255,255,255,0.82);
-      font-size: 1.05rem;
-      max-width: 500px;
-      margin: 0 auto 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-btn-group {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: #fff;
-      color: var(--accent-color);
-      padding: 0.85rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    .cta-btn-primary:hover {
-      background: var(--accent-color);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-    }
-
-    .cta-btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: transparent;
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      border: 2px solid rgba(255,255,255,0.5);
-      transition: all 0.25s ease;
-    }
-
-    .cta-btn-outline:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: #fff;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Entrance animation */
-    .gallery-item {
-      animation: galleryFadeIn 0.5s ease both;
-    }
-
-    @keyframes galleryFadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
 
-<body class="gallery-page">
+<body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="bgCarrier" stroke-width="0"></g>
           <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="iconCarrier">
             <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path
+              d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
             <path d="M4 22V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
             <path d="M20 9.5V13.5M20 22V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="currentColor" stroke-width="1.5"></path>
+            <path
+              d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"
+              stroke="currentColor" stroke-width="1.5"></path>
           </g>
         </svg>
         <h1 class="sitename">GriyaSpace</h1>
@@ -568,11 +66,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html" class="active">Beranda</a></li>
           <li><a href="about.html">Tentang Kami</a></li>
           <li><a href="properties.html">Properti</a></li>
           <li><a href="services.html">Layanan</a></li>
-          <li><a href="galery.html" class="active">Galeri</a></li>
+          <li><a href="galery.html">Galeri</a></li>
           <li><a href="blog.html">Artikel</a></li>
           <li><a href="contact.html">Kontak</a></li>
         </ul>
@@ -584,471 +82,1225 @@
 
   <main class="main">
 
-    <!-- ══════════════════════════════════════
-         GALLERY HERO BANNER
-    ══════════════════════════════════════ -->
-    <div class="gallery-hero">
-      <div class="gallery-hero-bg">
-        <img src="assets/img/real-estate/property-exterior-2.webp" alt="">
-        <img src="assets/img/real-estate/property-interior-4.webp" alt="">
-        <img src="assets/img/real-estate/property-exterior-3.webp" alt="">
-        <img src="assets/img/real-estate/property-interior-8.webp" alt="">
-      </div>
-      <div class="gallery-hero-content">
-        <span class="badge-label">
-          <i class="bi bi-images"></i>
-          Galeri Foto Properti
-        </span>
-        <h1>Koleksi Properti <span>Premium</span> Kami</h1>
-        <p>Jelajahi ribuan foto properti eksklusif — dari eksterior memukau hingga interior mewah yang menawan.</p>
-        <div class="gallery-hero-stats">
-          <div class="stat">
-            <div class="stat-number">30+</div>
-            <div class="stat-label">Foto Pilihan</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Kategori</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Foto Asli</div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="hero-wrapper">
+          <div class="row g-4">
+
+            <div class="col-lg-7">
+              <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
+                <div class="content-header">
+                  <span class="hero-label">
+                    <i class="bi bi-house-heart"></i>
+                    Hunian Impian Menanti Anda
+                  </span>
+                  <h1>Temukan Properti Ideal Anda Bersama Agen Terpercaya</h1>
+                  <p>Dapatkan pilihan cluster perumahan eksklusif, apartemen modern, dan ruko strategis di berbagai
+                    lokasi prima di Indonesia dengan kemudahan proses KPR.</p>
+                </div>
+
+                <div class="search-container" data-aos="fade-up" data-aos-delay="300">
+                  <div class="search-header">
+                    <h3>Mulai Pencarian Properti</h3>
+                    <p>Temukan ribuan listing properti terverifikasi</p>
+                  </div>
+
+                  <form action="properties.html" method="get" class="property-search-form">
+                    <div class="search-grid">
+                      <div class="search-field">
+                        <label for="search-location" class="field-label">Lokasi</label>
+                        <input type="text" id="search-location" name="location" placeholder="Kota atau area perumahan">
+                        <i class="bi bi-geo-alt field-icon"></i>
+                      </div>
+
+                      <div class="search-field">
+                        <label for="search-type" class="field-label">Tipe</label>
+                        <select id="search-type" name="property_type">
+                          <option value="">Semua Tipe</option>
+                          <option value="Rumah">Rumah Tinggal</option>
+                          <option value="Apartemen">Apartemen</option>
+                          <option value="Kondominium">Kondominium</option>
+                          <option value="Ruko">Ruko / Komersial</option>
+                          <option value="Townhouse">Townhouse</option>
+                          <option value="Loft">Loft / Studio</option>
+                        </select>
+                        <i class="bi bi-building field-icon"></i>
+                      </div>
+
+                      <div class="search-field">
+                        <label for="search-budget" class="field-label">Harga</label>
+                        <select id="search-budget" name="price_range">
+                          <option value="">Semua Harga</option>
+                          <option value="under500">Di bawah Rp 500 Juta</option>
+                          <option value="500to2000">Rp 500 Juta - Rp 2 Miliar</option>
+                          <option value="above2000">Di atas Rp 2 Miliar</option>
+                        </select>
+                        <i class="bi bi-currency-dollar field-icon"></i>
+                      </div>
+
+                      <div class="search-field">
+                        <label for="search-rooms" class="field-label">Kamar Tidur</label>
+                        <select id="search-rooms" name="bedrooms">
+                          <option value="any">Semua</option>
+                          <option value="1">1 Kamar</option>
+                          <option value="2">2 Kamar</option>
+                          <option value="3">3 Kamar</option>
+                          <option value="4">4+ Kamar</option>
+                        </select>
+                        <i class="bi bi-door-open field-icon"></i>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="search-btn">
+                      <i class="bi bi-search"></i>
+                      <span>Cari Properti</span>
+                    </button>
+                  </form>
+                </div>
+
+                <div class="achievement-grid" data-aos="fade-up" data-aos-delay="400">
+                  <div class="achievement-item">
+                    <div class="achievement-number">
+                      <span data-purecounter-start="0" data-purecounter-end="1250" data-purecounter-duration="1"
+                        class="purecounter"></span>+
+                    </div>
+                    <span class="achievement-text">Listing Aktif</span>
+                  </div>
+                  <div class="achievement-item">
+                    <div class="achievement-number">
+                      <span data-purecounter-start="0" data-purecounter-end="80" data-purecounter-duration="1"
+                        class="purecounter"></span>+
+                    </div>
+                    <span class="achievement-text">Agen Pilihan</span>
+                  </div>
+                  <div class="achievement-item">
+                    <div class="achievement-number">
+                      <span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1"
+                        class="purecounter"></span>%
+                    </div>
+                    <span class="achievement-text">Kepuasan Klien</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Hero Content -->
+
+            <div class="col-lg-5">
+              <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+                <div class="visual-container">
+                  <div class="featured-property">
+                    <img src="assets/img/real-estate/property-exterior-8.webp" alt="Featured Property"
+                      class="img-fluid">
+                    <div class="property-info">
+                      <div class="property-price">Rp 8,5 Miliar</div>
+                      <div class="property-details">
+                        <span><i class="bi bi-geo-alt"></i> Kebayoran Baru, Jkt Selatan</span>
+                        <span><i class="bi bi-house"></i> 4 KT, 3 KM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="overlay-images">
+                    <div class="overlay-img overlay-1">
+                      <img src="assets/img/real-estate/property-interior-4.webp" alt="Interior View" class="img-fluid">
+                    </div>
+                    <div class="overlay-img overlay-2">
+                      <img src="assets/img/real-estate/property-exterior-2.webp" alt="Exterior View" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="agent-card">
+                    <div class="agent-profile">
+                      <img src="assets/img/real-estate/agent-7.webp" alt="Agent Profile" class="agent-photo">
+                      <div class="agent-info">
+                        <h4>Budi Santoso</h4>
+                        <p>Konsultan Properti Senior</p>
+                        <div class="agent-rating">
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <span class="rating-text">5.0 (94 ulasan)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="contact-agent-btn">
+                      <i class="bi bi-chat-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Hero Visual -->
+
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
-         FILTER TABS (STICKY)
-    ══════════════════════════════════════ -->
-    <div class="gallery-filter-wrapper">
-      <div class="container">
-        <div class="gallery-filter-tabs">
-          <button class="filter-tab active" data-filter="all" id="filter-all">
-            <i class="bi bi-grid-3x3-gap"></i>
-            Semua
-            <span class="tab-count" id="count-all">30</span>
-          </button>
-          <button class="filter-tab" data-filter="eksterior" id="filter-eksterior">
-            <i class="bi bi-house"></i>
-            Eksterior
-            <span class="tab-count" id="count-eksterior">9</span>
-          </button>
-          <button class="filter-tab" data-filter="interior" id="filter-interior">
-            <i class="bi bi-lamp"></i>
-            Interior
-            <span class="tab-count" id="count-interior">9</span>
-          </button>
-          <button class="filter-tab" data-filter="fasilitas" id="filter-fasilitas">
-            <i class="bi bi-stars"></i>
-            Fasilitas
-            <span class="tab-count" id="count-fasilitas">4</span>
-          </button>
-          <button class="filter-tab" data-filter="lingkungan" id="filter-lingkungan">
-            <i class="bi bi-geo-alt"></i>
-            Lingkungan
-            <span class="tab-count" id="count-lingkungan">8</span>
-          </button>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Home About Section -->
+    <section id="home-about" class="home-about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+            <div class="image-gallery">
+              <div class="primary-image">
+                <img src="assets/img/real-estate/property-exterior-1.webp" alt="Modern Property" class="img-fluid">
+                <div class="experience-badge">
+                  <div class="badge-content">
+                    <div class="number"><span data-purecounter-start="0" data-purecounter-end="18"
+                        data-purecounter-duration="1" class="purecounter"></span>+</div>
+                    <div class="text">Tahun<br>Pengalaman</div>
+                  </div>
+                </div>
+              </div>
+              <div class="secondary-image">
+                <img src="assets/img/real-estate/property-interior-4.webp" alt="Luxury Interior" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            <div class="content">
+              <div class="section-header">
+                <span class="section-label">Tentang Perusahaan Kami</span>
+                <h2>Membangun Impian, Mewujudkan Hunian Sejak 2008</h2>
+              </div>
+
+              <p>Kami hadir sebagai solusi terpercaya di pasar properti Indonesia, membantu ribuan keluarga menemukan
+                rumah ideal mereka. Dengan komitmen tinggi pada kualitas layanan, legalitas yang terjamin, dan pilihan
+                properti terbaik di lokasi strategis.</p>
+
+              <div class="achievements-list">
+                <div class="achievement-item">
+                  <div class="achievement-icon">
+                    <i class="bi bi-house-door"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <h4><span data-purecounter-start="0" data-purecounter-end="3200" data-purecounter-duration="2"
+                        class="purecounter"></span>+ Properti Terjual</h4>
+                    <p>Transaksi sukses yang telah kami selesaikan</p>
+                  </div>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <h4><span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1"
+                        class="purecounter"></span>% Kepuasan Klien</h4>
+                    <p>Klien puas yang merekomendasikan layanan kami</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="action-section">
+                <a href="about.html" class="btn-cta">
+                  <span>Pelajari Selengkapnya</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <div class="contact-info">
+                  <div class="contact-icon">
+                    <i class="bi bi-telephone"></i>
+                  </div>
+                  <div class="contact-details">
+                    <span>Hubungi kami sekarang</span>
+                    <strong>+62 21 5555 1234</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
-         GALLERY GRID
-    ══════════════════════════════════════ -->
-    <section class="gallery-section">
-      <div class="container">
-        <div class="gallery-grid" id="gallery-grid">
+    </section><!-- /Home About Section -->
 
-          <!-- EKSTERIOR -->
-          <div class="gallery-item" data-category="eksterior" data-title="Vila Mewah Kebayoran" data-index="0">
-            <img src="assets/img/real-estate/property-exterior-2.webp" alt="Vila Mewah Kebayoran" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Vila Mewah Kebayoran</p>
+    <!-- Featured Properties Section -->
+    <section id="featured-properties" class="featured-properties section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Properti Unggulan</h2>
+        <p>Pilihan hunian terbaik dengan lokasi strategis, fasilitas lengkap, dan nilai investasi tinggi di kelasnya.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-8">
+
+            <div class="featured-property-main h-100 d-flex flex-column" data-aos="zoom-in" data-aos-delay="200">
+              <div class="property-hero">
+                <img src="assets/img/real-estate/cluster_danau.png" alt="Luxury Estate" class="img-fluid">
+                <div class="property-overlay">
+                  <div class="property-badge-main premium">Premium</div>
+                  <div class="property-stats">
+                    <div class="stat-item">
+                      <i class="bi bi-house-door"></i>
+                      <span>6 Kamar Tidur</span>
+                    </div>
+                    <div class="stat-item">
+                      <i class="bi bi-droplet-fill"></i>
+                      <span>5 Kamar Mandi</span>
+                    </div>
+                    <div class="stat-item">
+                      <i class="bi bi-arrows-move"></i>
+                      <span>Lb: 510 m²</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="property-hero-content flex-grow-1 d-flex flex-column justify-content-between">
+                <div class="property-header">
+                  <div class="property-info">
+                    <h2><a href="property-details-1.html">Cluster Eksklusif dengan Taman dan View Danau</a></h2>
+                    <div class="property-address">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>BSD City, Tangerang</span>
+                    </div>
+                  </div>
+                  <div class="property-price-main">Rp 4,8 Miliar</div>
+                </div>
+                <p class="property-description">Hunian mewah bergaya modern tropis di kawasan elit BSD City. Dilengkapi
+                  dengan kolam renang pribadi, taman luas, sistem keamanan 24 jam, dan akses cepat ke pusat perbelanjaan
+                  serta jalan tol.</p>
+                <div class="property-actions-main">
+                  <a href="property-details-1.html" class="btn-primary-custom">Jadwalkan Kunjungan</a>
+                  <a href="property-details-1.html" class="btn-outline-custom">Galeri Foto</a>
+                  <div class="property-listing-info">
+                    <span class="listing-status for-sale">Dijual</span>
+                    <span class="listing-date">Hari ini</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="properties-sidebar h-100 d-flex flex-column justify-content-between" style="gap: 24px;">
+
+              <div class="sidebar-property-card mb-0" data-aos="fade-left" data-aos-delay="300">
+                <div class="sidebar-property-image">
+                  <img src="assets/img/real-estate/apartemen_kota.png" alt="Modern Condo" class="img-fluid">
+                  <div class="sidebar-property-badge hot">Promo Spesial</div>
+                </div>
+                <div class="sidebar-property-content">
+                  <h4><a href="property-details-2.html">Apartemen Modern di Pusat Kota</a></h4>
+                  <div class="sidebar-location">
+                    <i class="bi bi-pin-map"></i>
+                    <span>Sudirman, Jakarta Selatan</span>
+                  </div>
+                  <div class="sidebar-specs">
+                    <span><i class="bi bi-house"></i> 3 KT</span>
+                    <span><i class="bi bi-droplet"></i> 2 KM</span>
+                    <span><i class="bi bi-rulers"></i> Lb: 120 m²</span>
+                  </div>
+                  <div class="sidebar-price-row">
+                    <div class="sidebar-price">Rp 3,2 Miliar</div>
+                    <a href="property-details-2.html" class="sidebar-btn">Lihat</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar-property-card mb-0" data-aos="fade-left" data-aos-delay="400">
+                <div class="sidebar-property-image">
+                  <img src="assets/img/real-estate/rumah_asri.png" alt="Family Home" class="img-fluid">
+                  <div class="sidebar-property-badge new">Baru Terdaftar</div>
+                </div>
+                <div class="sidebar-property-content">
+                  <h4><a href="property-details-3.html">Rumah Keluarga Nyaman & Asri</a></h4>
+                  <div class="sidebar-location">
+                    <i class="bi bi-pin-map"></i>
+                    <span>Dago, Bandung</span>
+                  </div>
+                  <div class="sidebar-specs">
+                    <span><i class="bi bi-house"></i> 4 KT</span>
+                    <span><i class="bi bi-droplet"></i> 3 KM</span>
+                    <span><i class="bi bi-rulers"></i> Lb: 180 m²</span>
+                  </div>
+                  <div class="sidebar-price-row">
+                    <div class="sidebar-price">Rp 1,9 Miliar</div>
+                    <a href="property-details-3.html" class="sidebar-btn">Lihat</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row gy-4 mt-4">
+
+          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="property-card-horizontal h-100">
+              <div class="property-image-horizontal">
+                <img src="assets/img/real-estate/penthouse_mewah.png" alt="Penthouse" class="img-fluid">
+                <div class="property-badge-horizontal exclusive">Eksklusif</div>
+              </div>
+              <div class="property-content-horizontal flex-grow-1 d-flex flex-column justify-content-between">
+                <h3><a href="property-details-4.html">Penthouse Mewah View Kota</a></h3>
+                <div class="property-location-horizontal">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Kuningan, Jakarta Selatan</span>
+                </div>
+                <div class="property-features">
+                  <span class="feature"><i class="bi bi-house"></i> 3 Kamar Tidur</span>
+                  <span class="feature"><i class="bi bi-droplet"></i> 3 Kamar Mandi</span>
+                  <span class="feature"><i class="bi bi-rulers"></i> Lb: 220 m²</span>
+                </div>
+                <p>Penthouse eksklusif dengan kaca setinggi langit-langit, balkon luas dengan pemandangan langsung
+                  cakrawala kota Jakarta yang megah.</p>
+                <div class="property-footer-horizontal">
+                  <div class="property-price-horizontal">Rp 6,5 Miliar</div>
+                  <a href="property-details-4.html" class="btn-view-horizontal">Detail Selengkapnya</a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="gallery-item" data-category="interior" data-title="Ruang Tamu Penthouse" data-index="1">
-            <img src="assets/img/real-estate/property-interior-4.webp" alt="Ruang Tamu Penthouse" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Ruang Tamu Penthouse</p>
+          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="property-card-horizontal h-100">
+              <div class="property-image-horizontal">
+                <img src="assets/img/real-estate/rumah_minimalis.png" alt="Modern Home" class="img-fluid">
+                <div class="property-badge-horizontal new">Baru</div>
+              </div>
+              <div class="property-content-horizontal flex-grow-1 d-flex flex-column justify-content-between">
+                <h3><a href="property-details-5.html">Rumah Minimalis Desain Arsitek</a></h3>
+                <div class="property-location-horizontal">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Sukajadi, Bandung</span>
+                </div>
+                <div class="property-features">
+                  <span class="feature"><i class="bi bi-house"></i> 4 Kamar Tidur</span>
+                  <span class="feature"><i class="bi bi-droplet"></i> 3 Kamar Mandi</span>
+                  <span class="feature"><i class="bi bi-rulers"></i> Lb: 200 m²</span>
+                </div>
+                <p>Rumah minimalis modern pemenang penghargaan arsitektur dengan konsep ramah lingkungan, smart home,
+                  dan sirkulasi udara optimal.</p>
+                <div class="property-footer-horizontal">
+                  <div class="property-price-horizontal">Rp 2,4 Miliar</div>
+                  <a href="property-details-5.html" class="btn-view-horizontal">Detail Selengkapnya</a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="gallery-item" data-category="eksterior" data-title="Cluster Modern Serpong" data-index="2">
-            <img src="assets/img/real-estate/property-exterior-3.webp" alt="Cluster Modern Serpong" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Cluster Modern Serpong</p>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div class="gallery-item" data-category="interior" data-title="Master Bedroom Suite" data-index="3">
-            <img src="assets/img/real-estate/property-interior-8.webp" alt="Master Bedroom Suite" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Master Bedroom Suite</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="fasilitas" data-title="Dapur Gourmet Premium" data-index="4">
-            <img src="assets/img/real-estate/features-2.webp" alt="Dapur Gourmet Premium" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Fasilitas</span>
-                <p class="gallery-item-title">Dapur Gourmet Premium</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Apartemen High-Rise Kuningan" data-index="5">
-            <img src="assets/img/real-estate/property-exterior-7.webp" alt="Apartemen High-Rise Kuningan" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Apartemen High-Rise Kuningan</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Living Room View Panoramik" data-index="6">
-            <img src="assets/img/real-estate/property-interior-7.webp" alt="Living Room View Panoramik" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Living Room View Panoramik</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Townhouse Pondok Indah" data-index="7">
-            <img src="assets/img/real-estate/property-exterior-4.webp" alt="Townhouse Pondok Indah" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Townhouse Pondok Indah</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="fasilitas" data-title="Kamar Mandi Premium" data-index="8">
-            <img src="assets/img/real-estate/features-3.webp" alt="Kamar Mandi Premium" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Fasilitas</span>
-                <p class="gallery-item-title">Kamar Mandi Premium</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Dining Area Eksklusif" data-index="9">
-            <img src="assets/img/real-estate/property-interior-2.webp" alt="Dining Area Eksklusif" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Dining Area Eksklusif</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Rumah Minimalis BSD" data-index="10">
-            <img src="assets/img/real-estate/property-exterior-1.webp" alt="Rumah Minimalis BSD" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Rumah Minimalis BSD</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Bedroom Anak Modern" data-index="11">
-            <img src="assets/img/real-estate/property-interior-5.webp" alt="Bedroom Anak Modern" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Bedroom Anak Modern</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Cluster Perumahan Premium" data-index="12">
-            <img src="assets/img/real-estate/property-exterior-5.webp" alt="Cluster Perumahan Premium" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Cluster Perumahan Premium</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="fasilitas" data-title="Rooftop Garden & Teras" data-index="13">
-            <img src="assets/img/real-estate/features-5.webp" alt="Rooftop Garden & Teras" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Fasilitas</span>
-                <p class="gallery-item-title">Rooftop Garden & Teras</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Study Room / Home Office" data-index="14">
-            <img src="assets/img/real-estate/property-interior-6.webp" alt="Study Room / Home Office" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Study Room / Home Office</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Eksterior Villa Canggu" data-index="15">
-            <img src="assets/img/real-estate/property-exterior-8.webp" alt="Eksterior Villa Canggu" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Eksterior Villa Canggu</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Walk-in Closet Utama" data-index="16">
-            <img src="assets/img/real-estate/property-interior-1.webp" alt="Walk-in Closet Utama" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Walk-in Closet Utama</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Gedung Kondominium Modern" data-index="17">
-            <img src="assets/img/real-estate/property-exterior-9.webp" alt="Gedung Kondominium Modern" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Gedung Kondominium Modern</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Showcase Perumahan Mewah" data-index="18">
-            <img src="assets/img/real-estate/showcase-3.webp" alt="Showcase Perumahan Mewah" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Showcase Perumahan Mewah</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="fasilitas" data-title="Area Gym & Kebugaran" data-index="19">
-            <img src="assets/img/real-estate/features-1.webp" alt="Area Gym & Kebugaran" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Fasilitas</span>
-                <p class="gallery-item-title">Area Gym & Kebugaran</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Denah Penthouse Lantai 15" data-index="20">
-            <img src="assets/img/real-estate/property-interior-9.webp" alt="Denah Penthouse Lantai 15" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Denah Penthouse Lantai 15</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Area Kolam Renang Outdoor" data-index="21">
-            <img src="assets/img/real-estate/property-exterior-1.webp" alt="Area Kolam Renang Outdoor" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Area Kolam Renang Outdoor</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Ruko Komersial Strategis" data-index="22">
-            <img src="assets/img/real-estate/property-exterior-2.webp" alt="Ruko Komersial Strategis" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Ruko Komersial Strategis</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Kamar Tidur Tamu VIP" data-index="23">
-            <img src="assets/img/real-estate/property-interior-5.webp" alt="Kamar Tidur Tamu VIP" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Kamar Tidur Tamu VIP</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Taman Komplek Eksklusif" data-index="24">
-            <img src="assets/img/real-estate/property-exterior-4.webp" alt="Taman Komplek Eksklusif" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Taman Komplek Eksklusif</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Townhouse Asri Bogor" data-index="25">
-            <img src="assets/img/real-estate/property-exterior-5.webp" alt="Townhouse Asri Bogor" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Townhouse Asri Bogor</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Balkon Panoramik Kota" data-index="26">
-            <img src="assets/img/real-estate/property-interior-7.webp" alt="Balkon Panoramik Kota" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Balkon Panoramik Kota</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="lingkungan" data-title="Area Parkir & Lobby" data-index="27">
-            <img src="assets/img/real-estate/property-exterior-9.webp" alt="Area Parkir & Lobby" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Lingkungan</span>
-                <p class="gallery-item-title">Area Parkir & Lobby</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="eksterior" data-title="Perumahan Cluster Depok" data-index="28">
-            <img src="assets/img/real-estate/property-exterior-3.webp" alt="Perumahan Cluster Depok" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Eksterior</span>
-                <p class="gallery-item-title">Perumahan Cluster Depok</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="interior" data-title="Open Kitchen Modern" data-index="29">
-            <img src="assets/img/real-estate/property-interior-2.webp" alt="Open Kitchen Modern" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
-              <div class="gallery-item-info">
-                <span class="gallery-item-category">Interior</span>
-                <p class="gallery-item-title">Open Kitchen Modern</p>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /gallery-grid -->
       </div>
-    </section>
 
-    <!-- ══════════════════════════════════════
-         CTA SECTION
-    ══════════════════════════════════════ -->
-    <section class="gallery-cta">
-      <div class="container">
-        <h2>Tertarik dengan Properti yang Anda Lihat?</h2>
-        <p>Hubungi agen kami sekarang dan jadwalkan kunjungan langsung ke properti pilihan Anda.</p>
-        <div class="cta-btn-group">
-          <a href="properties.html" class="cta-btn-primary">
-            <i class="bi bi-house-heart"></i>
-            Lihat Semua Properti
+    </section><!-- /Featured Properties Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Layanan Unggulan</h2>
+        <p>Kami menyediakan berbagai layanan profesional untuk membantu mempermudah transaksi properti Anda.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-search"></i>
+              </div>
+              <div class="service-info">
+                <h3><a href="properties.html">Pencarian Properti</a></h3>
+                <p>Kami membantu menyaring ribuan listing properti terverifikasi untuk mendapatkan hunian yang paling
+                  sesuai dengan kebutuhan dan anggaran Anda.</p>
+                <ul class="service-highlights">
+                  <li><i class="bi bi-check-circle-fill"></i> Listing Terlengkap & Valid</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Filter Pencarian Canggih</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Tur Lokasi / Video Properti</li>
+                </ul>
+                <a href="properties.html" class="service-link">
+                  <span>Cari Sekarang</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+              <div class="service-visual">
+                <img src="assets/img/real-estate/property-interior-2.webp" class="img-fluid" alt="Pencarian Properti"
+                  loading="lazy">
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-calculator"></i>
+              </div>
+              <div class="service-info">
+                <h3><a href="service-details.html">Penilaian Properti</a></h3>
+                <p>Dapatkan taksiran harga properti Anda secara akurat berdasarkan analisis pasar terkini untuk
+                  memastikan harga jual yang bersaing dan menguntungkan.</p>
+                <ul class="service-highlights">
+                  <li><i class="bi bi-check-circle-fill"></i> Analisis Tren Pasar Riil</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Laporan Komparasi Harga</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Estimasi Nilai Jual & Sewa</li>
+                </ul>
+                <a href="service-details.html" class="service-link">
+                  <span>Minta Penilaian</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+              <div class="service-visual">
+                <img src="assets/img/real-estate/property-exterior-1.webp" class="img-fluid" alt="Penilaian Properti"
+                  loading="lazy">
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-key"></i>
+              </div>
+              <div class="service-info">
+                <h3><a href="properties.html">Sewa Properti</a></h3>
+                <p>Menyediakan layanan pengelolaan sewa terlengkap, mulai dari pemasaran unit, seleksi penyewa
+                  berkualitas, hingga pengurusan dokumen kontrak.</p>
+                <ul class="service-highlights">
+                  <li><i class="bi bi-check-circle-fill"></i> Seleksi Penyewa Tepercaya</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Manajemen Kontrak Sewa</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Pemeliharaan Unit Properti</li>
+                </ul>
+                <a href="properties.html" class="service-link">
+                  <span>Mulai Menyewa</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+              <div class="service-visual">
+                <img src="assets/img/real-estate/property-interior-8.webp" class="img-fluid" alt="Sewa Properti"
+                  loading="lazy">
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+            <div class="service-card h-100">
+              <div class="service-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div class="service-info">
+                <h3><a href="contact.html">Konsultasi Investasi</a></h3>
+                <p>Konsultasi khusus bagi Anda yang ingin menginvestasikan dana pada instrumen properti untuk
+                  mendapatkan ROI (Return on Investment) maksimal.</p>
+                <ul class="service-highlights">
+                  <li><i class="bi bi-check-circle-fill"></i> Perencanaan Portofolio</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Evaluasi Risiko Investasi</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Prediksi Tren Pasar Depan</li>
+                </ul>
+                <a href="contact.html" class="service-link">
+                  <span>Pelajari Lebih Lanjut</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+              <div class="service-visual">
+                <img src="assets/img/real-estate/property-exterior-4.webp" class="img-fluid" alt="Konsultasi Investasi"
+                  loading="lazy">
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="600">
+          <a href="services.html" class="btn-view-all">
+            <span>Lihat Semua Layanan</span>
+            <i class="bi bi-arrow-right"></i>
           </a>
-          <a href="contact.html" class="cta-btn-outline">
-            <i class="bi bi-chat-dots"></i>
-            Hubungi Agen Kami
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Featured Agents Section -->
+    <section id="featured-agents" class="featured-agents section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Agen Pilihan Kami</h2>
+        <p>Hubungi tim agen properti berlisensi kami yang siap membantu Anda menemukan properti terbaik dengan ramah dan
+          profesional.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="featured-agent">
+              <div class="agent-wrapper">
+                <div class="agent-photo">
+                  <img src="assets/img/real-estate/agent-1.webp" alt="Featured Agent" class="img-fluid">
+                  <div class="overlay-info">
+                    <div class="contact-actions">
+                      <a href="tel:+628123456789" class="contact-btn phone" title="Hubungi Sekarang">
+                        <i class="bi bi-telephone-fill"></i>
+                      </a>
+                      <a href="mailto:jenny.adriani@griyaspace.com" class="contact-btn email" title="Kirim Email">
+                        <i class="bi bi-envelope-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="achievement-badge">Top Seller</span>
+                </div>
+                <div class="agent-details flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4>Jenny Adriani</h4>
+                    <span class="position">Konsultan Properti Premium</span>
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Kebayoran Baru</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Rumah Mewah</span>
+                      <span class="tag">Properti Elit</span>
+                    </div>
+                  </div>
+                  <a href="agent-profile-1.html" class="view-profile">Lihat Profil</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Featured Agent -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="featured-agent">
+              <div class="agent-wrapper">
+                <div class="agent-photo">
+                  <img src="assets/img/real-estate/agent-2.webp" alt="Featured Agent" class="img-fluid">
+                  <div class="overlay-info">
+                    <div class="contact-actions">
+                      <a href="tel:+628123456790" class="contact-btn phone" title="Hubungi Sekarang">
+                        <i class="bi bi-telephone-fill"></i>
+                      </a>
+                      <a href="mailto:marcus.wijaya@griyaspace.com" class="contact-btn email" title="Kirim Email">
+                        <i class="bi bi-envelope-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="achievement-badge expert">Terverifikasi</span>
+                </div>
+                <div class="agent-details flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4>Marcus Wijaya</h4>
+                    <span class="position">Spesialis Properti Komersial</span>
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Sudirman, Jakarta</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Gedung Kantor</span>
+                      <span class="tag">Ruko & Ritel</span>
+                    </div>
+                  </div>
+                  <a href="agent-profile-2.html" class="view-profile">Lihat Profil</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Featured Agent -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="featured-agent">
+              <div class="agent-wrapper">
+                <div class="agent-photo">
+                  <img src="assets/img/real-estate/agent-3.webp" alt="Featured Agent" class="img-fluid">
+                  <div class="overlay-info">
+                    <div class="contact-actions">
+                      <a href="tel:+628123456791" class="contact-btn phone" title="Hubungi Sekarang">
+                        <i class="bi bi-telephone-fill"></i>
+                      </a>
+                      <a href="mailto:sophia.siregar@griyaspace.com" class="contact-btn email" title="Kirim Email">
+                        <i class="bi bi-envelope-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="achievement-badge rising">Agen Baru</span>
+                </div>
+                <div class="agent-details flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4>Sophia Siregar</h4>
+                    <span class="position">Spesialis Pembeli Pertama</span>
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Serpong, Tangerang</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Kondominium</span>
+                      <span class="tag">Pembeli Milenial</span>
+                    </div>
+                  </div>
+                  <a href="agent-profile-3.html" class="view-profile">Lihat Profil</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Featured Agent -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="featured-agent">
+              <div class="agent-wrapper">
+                <div class="agent-photo">
+                  <img src="assets/img/real-estate/agent-4.webp" alt="Featured Agent" class="img-fluid">
+                  <div class="overlay-info">
+                    <div class="contact-actions">
+                      <a href="tel:+628123456792" class="contact-btn phone" title="Hubungi Sekarang">
+                        <i class="bi bi-telephone-fill"></i>
+                      </a>
+                      <a href="mailto:dani.ramadhan@griyaspace.com" class="contact-btn email" title="Kirim Email">
+                        <i class="bi bi-envelope-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="achievement-badge veteran">Pemenang Penghargaan</span>
+                </div>
+                <div class="agent-details flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4>Dani Ramadhan</h4>
+                    <span class="position">Penasihat Investasi Properti</span>
+                    <div class="location-info">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Dago, Bandung</span>
+                    </div>
+                    <div class="expertise-tags">
+                      <span class="tag">Rumah Kos & Ruko</span>
+                      <span class="tag">Analisis Keuntungan</span>
+                    </div>
+                  </div>
+                  <a href="agent-profile-4.html" class="view-profile">Lihat Profil</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Featured Agent -->
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+          <a href="agents.html" class="discover-all-agents">
+            <span>Temukan Semua Agen</span>
+            <i class="bi bi-arrow-right"></i>
           </a>
         </div>
+
       </div>
-    </section>
+
+    </section><!-- /Featured Agents Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimoni Klien</h2>
+        <p>Simak pengalaman langsung dari para klien yang telah mempercayakan transaksi propertinya kepada kami.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="testimonial-grid">
+
+          <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="testimonial-card h-100">
+              <div class="testimonial-header">
+                <div class="testimonial-image">
+                  <img src="assets/img/person/person-f-5.webp" class="img-fluid" alt="Testimonial 1">
+                </div>
+                <div class="testimonial-meta">
+                  <h3>Sofia Rahayu</h3>
+                  <h4>Desainer Interior</h4>
+                  <div class="company-logo">
+                    <i class="bi bi-building"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-body">
+                <i class="bi bi-chat-quote-fill quote-icon"></i>
+                <p>Mencari rumah impian bersama GriyaSpace sangatlah mudah dan transparan. Pilihan cluster perumahannya
+                  valid dan layanannya luar biasa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="testimonial-card h-100">
+              <div class="testimonial-header">
+                <div class="testimonial-image">
+                  <img src="assets/img/person/person-m-5.webp" class="img-fluid" alt="Testimonial 2">
+                </div>
+                <div class="testimonial-meta">
+                  <h3>Adi Baskoro</h3>
+                  <h4>Pengusaha</h4>
+                  <div class="company-logo">
+                    <i class="bi bi-buildings"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-body">
+                <i class="bi bi-chat-quote-fill quote-icon"></i>
+                <p>Investasi properti ruko komersial pertama saya berjalan mulus berkat bimbingan terarah dan analisis
+                  return investasi dari konsultan ahli GriyaSpace.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="300">
+            <div class="testimonial-card h-100">
+              <div class="testimonial-header">
+                <div class="testimonial-image">
+                  <img src="assets/img/person/person-f-6.webp" class="img-fluid" alt="Testimonial 3">
+                </div>
+                <div class="testimonial-meta">
+                  <h3>Isabel Santoso</h3>
+                  <h4>Manajer Produk</h4>
+                  <div class="company-logo">
+                    <i class="bi bi-building-check"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-body">
+                <i class="bi bi-chat-quote-fill quote-icon"></i>
+                <p>Sebagai pembeli rumah pertama kali, panduan KPR dan penjelasan legalitas yang detail sangat
+                  memberikan rasa aman bagi saya dan keluarga.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="400">
+            <div class="testimonial-card h-100">
+              <div class="testimonial-header">
+                <div class="testimonial-image">
+                  <img src="assets/img/person/person-m-6.webp" class="img-fluid" alt="Testimonial 4">
+                </div>
+                <div class="testimonial-meta">
+                  <h3>Hendra Wijaya</h3>
+                  <h4>Pimpinan Teknis</h4>
+                  <div class="company-logo">
+                    <i class="bi bi-building-gear"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-body">
+                <i class="bi bi-chat-quote-fill quote-icon"></i>
+                <p>Platform GriyaSpace memiliki filter pencarian yang sangat akurat dengan foto properti yang riil.
+                  Menghemat waktu saya dalam mencari hunian.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mengapa Memilih Kami</h2>
+        <p>Komitmen kami adalah memberikan rasa aman, transparansi, dan kemudahan dalam setiap transaksi properti Anda.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="content">
+              <h3>Mengapa Memilih GriyaSpace sebagai Mitra Properti Anda?</h3>
+              <p>Dengan pengalaman lebih dari 15 tahun di pasar properti Indonesia, kami telah membangun reputasi atas
+                dasar kepercayaan, integritas, dan hasil nyata. Tim ahli lokal kami memahami seluk-beluk setiap kawasan
+                perumahan dan tren perkembangan pasar.</p>
+
+              <div class="features-list">
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="icon-wrapper me-3">
+                    <i class="bi bi-check-circle-fill"></i>
+                  </div>
+                  <div>
+                    <h5>Pemahaman Pasar Lokal</h5>
+                    <p>Pengetahuan mendalam mengenai wilayah perkotaan, tren harga perumahan, dan perkembangan
+                      infrastruktur sekitar.</p>
+                  </div>
+                </div>
+
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="icon-wrapper me-3">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                  <div>
+                    <h5>Hanya Listing Terverifikasi</h5>
+                    <p>Setiap properti yang terdaftar telah melalui pemeriksaan dokumen legalitas (SHM/HGB/IMB) sebelum
+                      kami pasarkan.</p>
+                  </div>
+                </div>
+
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="icon-wrapper me-3">
+                    <i class="bi bi-headset"></i>
+                  </div>
+                  <div>
+                    <h5>Dukungan Layanan 24/7</h5>
+                    <p>Tim support kami siap membantu menjawab pertanyaan Anda dan mendampingi kunjungan lokasi kapan
+                      saja dibutuhkan.</p>
+                  </div>
+                </div>
+
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="icon-wrapper me-3">
+                    <i class="bi bi-graph-up-arrow"></i>
+                  </div>
+                  <div>
+                    <h5>Rekam Jejak Terbukti</h5>
+                    <p>Sukses menyelesaikan lebih dari 3.200 transaksi jual/beli dan sewa properti dengan persentase
+                      kepuasan klien 98%.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons mt-4">
+                <a href="about.html" class="btn btn-primary me-3">Tentang Kami Selengkapnya</a>
+                <a href="agents.html" class="btn btn-outline-primary">Hubungi Agen Kami</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="stats-section">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="stat-card h-100 text-center">
+                    <div class="stat-icon mb-3">
+                      <i class="bi bi-house-door"></i>
+                    </div>
+                    <div class="stat-number">
+                      <span data-purecounter-start="0" data-purecounter-end="3200" data-purecounter-duration="2"
+                        class="purecounter"></span>+
+                    </div>
+                    <div class="stat-label">Hunian Terjual</div>
+                    <p>Transaksi sukses penutupan kontrak untuk berbagai jenis rumah dan apartemen.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="stat-card h-100 text-center">
+                    <div class="stat-icon mb-3">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="stat-number">
+                      <span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="2"
+                        class="purecounter"></span>%
+                    </div>
+                    <div class="stat-label">Kepuasan Klien</div>
+                    <p>Layanan berkualitas yang mendapatkan rekomendasi langsung dari para pemilik hunian.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="stat-card h-100 text-center">
+                    <div class="stat-icon mb-3">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="stat-number">
+                      <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="2"
+                        class="purecounter"></span>+
+                    </div>
+                    <div class="stat-label">Tahun Pengalaman</div>
+                    <p>Hampir dua dekade keahlian dalam memandu pasar properti dan pengurusan KPR.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="stat-card h-100 text-center">
+                    <div class="stat-icon mb-3">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div class="stat-number">
+                      <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="2"
+                        class="purecounter"></span>+
+                    </div>
+                    <div class="stat-label">Penghargaan Industri</div>
+                    <p>Pengakuan atas dedikasi pelayanan jual-beli real estat terbaik di tingkat nasional.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-preview mt-5">
+                <div class="testimonial-card">
+                  <div class="quote-icon mb-2">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <p>"Bekerja bersama tim GriyaSpace membuat proses pembelian rumah pertama kami menjadi pengalaman yang
+                    sangat mudah. Pengetahuan mereka akan pasar perumahan lokal dan dedikasi dalam mencarikan unit
+                    terbaik melebihi ekspektasi kami."</p>
+                  <div class="testimonial-author d-flex align-items-center mt-3">
+                    <img src="assets/img/person/person-f-3.webp" alt="Client" class="author-image me-3">
+                    <div>
+                      <h6>Sarah Siregar</h6>
+                      <span>Pembeli Rumah Pertama</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Call To Action Section -->
+    <section class="call-to-action-1 call-to-action section" id="call-to-action">
+      <div class="cta-bg" style="background-image: url('assets/img/real-estate/showcase-3.webp');"></div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-8">
+
+            <div class="cta-content text-center">
+              <h2>Butuh Bantuan Menemukan Properti Impian Anda?</h2>
+              <p>Jangan ragu untuk menghubungi konsultan properti kami. Kami siap memberikan saran terbaik secara gratis
+                mengenai survei lokasi, rekomendasi cluster, hingga simulasi KPR bank.</p>
+
+              <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Hubungi Kami Sekarang</a>
+                <a href="tel:+622155551234" class="btn btn-outline">Jadwalkan Telepon</a>
+              </div>
+
+              <div class="cta-features">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-telephone-fill"></i>
+                  <span>Konsultasi Gratis</span>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="250">
+                  <i class="bi bi-clock-fill"></i>
+                  <span>Layanan 24/7</span>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-shield-check-fill"></i>
+                  <span>Konsultan Tepercaya</span>
+                </div>
+              </div>
+
+            </div><!-- End CTA Content -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Recent Blog Posts Section -->
+    <section id="recent-blog-posts" class="recent-blog-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Artikel & Berita Terbaru</h2>
+        <p>Dapatkan tips seputar dekorasi rumah, panduan membeli properti, info KPR, dan tren investasi properti terbaru
+          di Indonesia.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <article class="featured-post">
+              <div class="featured-img">
+                <img src="assets/img/blog/blog-post-square-8.webp" alt="" class="img-fluid" loading="lazy">
+                <div class="featured-badge">Unggulan</div>
+              </div>
+
+              <div class="featured-content">
+                <div class="post-header">
+                  <a href="blog.html" class="category">Investasi</a>
+                  <span class="post-date">20 Jun 2026</span>
+                </div>
+
+                <h2 class="post-title">
+                  <a href="blog-details-10.html">Mengapa Properti Masih Jadi Pilihan Investasi Terbaik</a>
+                </h2>
+
+                <p class="post-excerpt">
+                  Temukan alasan mengapa sektor properti tetap menjadi pilihan investasi paling aman dan menguntungkan
+                  dibandingkan instrumen keuangan lainnya di masa kini. Artikel ini membahas tips mempersiapkan
+                  dokumen, menghitung rasio utang, dan memilih bank dengan bunga KPR terbaik untuk kelancaran pengajuan
+                  Anda.
+                </p>
+
+                <div class="post-footer">
+                  <div class="author-info">
+                    <img src="assets/img/person/person-m-8.webp" alt="" class="author-avatar">
+                    <div class="author-details">
+                      <span class="author-name">Budi Santoso</span>
+                      <span class="read-time">5 menit baca</span>
+                    </div>
+                  </div>
+                  <a href="blog-details-10.html" class="read-more">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-post" data-aos="fade-up" data-aos-delay="400">
+              <div class="featured-img">
+                <img src="assets/img/blog/blog-post-square-9.webp" alt="" class="img-fluid" loading="lazy">
+                <div class="featured-badge">Unggulan</div>
+              </div>
+
+              <div class="featured-content">
+                <div class="post-header">
+                  <a href="blog.html" class="category">Sewa</a>
+                  <span class="post-date">18 Jun 2026</span>
+                </div>
+
+                <h2 class="post-title">
+                  <a href="blog-details-11.html">Hak & Kewajiban Penyewa yang Perlu Kamu Tahu</a>
+                </h2>
+
+                <p class="post-excerpt">
+                  Sebelum menandatangani kontrak sewa, pahami hak dan kewajiban Anda sebagai penyewa untuk menghindari
+                  perselisihan di kemudian hari. kenaikan harga properti yang sangat
+                  menjanjikan dengan dukungan akses transportasi massal. Temukan area prospektif berikutnya untuk
+                  investasi Anda.
+                </p>
+
+                <div class="post-footer">
+                  <div class="author-info">
+                    <img src="assets/img/person/person-f-7.webp" alt="" class="author-avatar">
+                    <div class="author-details">
+                      <span class="author-name">Sri Wahyuni</span>
+                      <span class="read-time">7 menit baca</span>
+                    </div>
+                  </div>
+                  <a href="blog-details-10.html" class="read-more">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </article>
+          </div><!-- End featured post -->
+
+          <div class="col-lg-4">
+
+            <article class="recent-post" data-aos="fade-up" data-aos-delay="200">
+              <div class="recent-img">
+                <img src="assets/img/blog/blog-post-square-10.webp" alt="" class="img-fluid" loading="lazy">
+              </div>
+              <div class="recent-content">
+                <a href="blog.html" class="category">Regulasi</a>
+                <h3 class="recent-title">
+                  <a href="blog-details-12.html">Syarat & Prosedur Balik Nama Sertifikat Tanah 2025</a>
+                </h3>
+                <div class="recent-meta">
+                  <span class="author">Oleh Rian Nugraha</span>
+                  <span class="date">15 Jun 2026</span>
+                </div>
+              </div>
+            </article><!-- End recent post -->
+
+            <article class="recent-post" data-aos="fade-up" data-aos-delay="250">
+              <div class="recent-img">
+                <img src="assets/img/blog/blog-post-square-6.webp" alt="" class="img-fluid" loading="lazy">
+              </div>
+              <div class="recent-content">
+                <a href="blog.html" class="category">Renovasi</a>
+                <h3 class="recent-title">
+                  <a href="blog-details-13.html">Renovasi Rumah Hemat: Tips & Estimasi Biaya Terkini</a>
+                </h3>
+                <div class="recent-meta">
+                  <span class="author">Oleh Anita Sari</span>
+                  <span class="date">12 Jun 2026</span>
+                </div>
+              </div>
+            </article><!-- End recent post -->
+
+            <article class="recent-post" data-aos="fade-up" data-aos-delay="300">
+              <div class="recent-img">
+                <img src="assets/img/blog/blog-post-1.webp" alt="" class="img-fluid" loading="lazy">
+              </div>
+              <div class="recent-content">
+                <a href="blog.html" class="category">Investasi</a>
+                <h3 class="recent-title">
+                  <a href="blog-details-1.html">Memahami Tren Investasi Properti 2025</a>
+                </h3>
+                <div class="recent-meta">
+                  <span class="author">Oleh Yudi Pratama</span>
+                  <span class="date">10 Jun 2026</span>
+                </div>
+              </div>
+            </article><!-- End recent post -->
+
+            <article class="recent-post" data-aos="fade-up" data-aos-delay="350">
+              <div class="recent-img">
+                <img src="assets/img/blog/blog-post-2.webp" alt="" class="img-fluid" loading="lazy">
+              </div>
+              <div class="recent-content">
+                <a href="blog.html" class="category">Tips</a>
+                <h3 class="recent-title">
+                  <a href="blog-details-2.html">Tips Memilih Properti yang Tepat untuk Keluarga Aktif</a>
+                </h3>
+                <div class="recent-meta">
+                  <span class="author">Oleh Kevin Wijaya</span>
+                  <span class="date">08 Jun 2026</span>
+                </div>
+              </div>
+            </article><!-- End recent post -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Blog Posts Section -->
 
   </main>
 
-  <!-- ══════════════════════════════════════
-       LIGHTBOX MODAL
-  ══════════════════════════════════════ -->
-  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Foto Properti">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
-    <div class="lightbox-inner">
-      <div class="lightbox-img-wrapper">
-        <img id="lightboxImg" src="" alt="Foto Properti">
-        <div class="lightbox-info-bar">
-          <span id="lightboxCategory" style="background:var(--accent-color);color:#fff;padding:0.2rem 0.7rem;border-radius:50px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;display:inline-block;margin-bottom:0.5rem;"></span>
-          <p id="lightboxTitle" style="color:#fff;font-weight:600;margin:0;font-size:1.05rem;"></p>
-        </div>
-      </div>
-    </div>
-    <div class="lightbox-counter" id="lightboxCounter">1 / 30</div>
-  </div>
-
   <footer id="footer" class="footer accent-background">
+
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">GriyaSpace</span>
           </a>
-          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik di seluruh Indonesia secara aman, transparan, dan profesional.</p>
+          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik
+            di seluruh Indonesia secara aman, transparan, dan profesional.</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="#twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -1058,21 +1310,21 @@
             <li><a href="index.html">Beranda</a></li>
             <li><a href="about.html">Tentang Kami</a></li>
             <li><a href="services.html">Layanan</a></li>
-            <li><a href="terms.html">Syarat &amp; Ketentuan</a></li>
+            <li><a href="terms.html">Syarat & Ketentuan</a></li>
             <li><a href="privacy.html">Kebijakan Privasi</a></li>
           </ul>
         </div>
 
-                            <div class="col-lg-2 col-6 footer-links">
-            <h4>Layanan Kami</h4>
-            <ul>
-              <li><a href="properties.html">Pencarian Properti</a></li>
-              <li><a href="service-details.html">Penilaian Properti</a></li>
-              <li><a href="properties.html">Sewa Properti</a></li>
-              <li><a href="contact.html">Konsultasi Investasi</a></li>
-              <li><a href="contact.html">Pengajuan KPR</a></li>
-            </ul>
-          </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Layanan Kami</h4>
+          <ul>
+            <li><a href="properties.html">Pencarian Properti</a></li>
+            <li><a href="service-details.html">Penilaian Properti</a></li>
+            <li><a href="properties.html">Sewa Properti</a></li>
+            <li><a href="contact.html">Konsultasi Investasi</a></li>
+            <li><a href="contact.html">Pengajuan KPR</a></li>
+          </ul>
+        </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Hubungi Kami</h4>
@@ -1082,16 +1334,19 @@
           <p class="mt-4"><strong>Telepon:</strong> <span>+62 21 5555 1234</span></p>
           <p><strong>Email:</strong> <span>info@griyaspace.com</span></p>
         </div>
+
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">GriyaSpace</strong> <span>All Rights Reserved</span></p>
     </div>
+
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1106,122 +1361,14 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Gallery JS -->
-  <script>
-    (function () {
-      const filterTabs  = document.querySelectorAll('.filter-tab');
-      const items       = document.querySelectorAll('.gallery-item');
-      const lightbox    = document.getElementById('galleryLightbox');
-      const lbImg       = document.getElementById('lightboxImg');
-      const lbTitle     = document.getElementById('lightboxTitle');
-      const lbCategory  = document.getElementById('lightboxCategory');
-      const lbCounter   = document.getElementById('lightboxCounter');
-      const lbClose     = document.getElementById('lightboxClose');
-      const lbPrev      = document.getElementById('lightboxPrev');
-      const lbNext      = document.getElementById('lightboxNext');
-
-      let currentFilter  = 'all';
-      let visibleItems   = [];
-      let currentLbIndex = 0;
-
-      // ── Filter Logic ──────────────────────────
-      function applyFilter(filter) {
-        currentFilter = filter;
-        visibleItems  = [];
-
-        items.forEach((item) => {
-          const cat = item.dataset.category;
-          const show = filter === 'all' || cat === filter;
-          item.style.display = show ? '' : 'none';
-          if (show) visibleItems.push(item);
-        });
-
-        // Re-animate visible items
-        visibleItems.forEach((item, i) => {
-          item.style.animation = 'none';
-          item.offsetHeight; // reflow
-          item.style.animation = `galleryFadeIn 0.4s ease ${i * 0.04}s both`;
-        });
-      }
-
-      filterTabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          applyFilter(tab.dataset.filter);
-        });
-      });
-
-      // Initial filter
-      applyFilter('all');
-
-      // ── Lightbox Logic ─────────────────────────
-      function openLightbox(item) {
-        currentLbIndex = visibleItems.indexOf(item);
-        showLightboxItem(currentLbIndex);
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function showLightboxItem(index) {
-        const item  = visibleItems[index];
-        const img   = item.querySelector('img');
-        lbImg.src          = img.src;
-        lbImg.alt          = img.alt;
-        lbTitle.textContent    = item.dataset.title || img.alt;
-        lbCategory.textContent = item.dataset.category ? item.dataset.category.charAt(0).toUpperCase() + item.dataset.category.slice(1) : '';
-        lbCounter.textContent  = `${index + 1} / ${visibleItems.length}`;
-        currentLbIndex = index;
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-        lbImg.src = '';
-      }
-
-      items.forEach((item) => {
-        item.addEventListener('click', () => openLightbox(item));
-      });
-
-      lbClose.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      lbPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const prev = (currentLbIndex - 1 + visibleItems.length) % visibleItems.length;
-        showLightboxItem(prev);
-      });
-
-      lbNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const next = (currentLbIndex + 1) % visibleItems.length;
-        showLightboxItem(next);
-      });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft')  lbPrev.click();
-        if (e.key === 'ArrowRight') lbNext.click();
-      });
-
-      // Touch swipe support
-      let touchStartX = 0;
-      lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
-      lightbox.addEventListener('touchend', (e) => {
-        const diff = touchStartX - e.changedTouches[0].screenX;
-        if (diff > 50)  lbNext.click();
-        if (diff < -50) lbPrev.click();
-      });
-    })();
-  </script>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="gs-wa-float" aria-label="Chat WhatsApp">
+    <div class="gs-wa-tooltip">Chat dengan kami</div>
+    <div class="gs-wa-btn">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+  </a>
 
 </body>
 
 </html>
-
-

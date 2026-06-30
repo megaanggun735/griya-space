@@ -1,0 +1,382 @@
+/* ================================================
+   GriyaSpace - Blog Extras (Delete + WA Float)
+   assets/css/blog-extras.css
+   ================================================ */
+
+/* ── User Comment Card ──────────────────────── */
+.user-comment-thread .comment-box {
+  border: 2px solid rgba(var(--accent-color-rgb, 41, 128, 185), 0.25);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(var(--accent-color-rgb, 41, 128, 185), 0.04) 0%, transparent 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-comment-thread .comment-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2980b9, #16a085);
+  border-radius: 14px 14px 0 0;
+}
+
+/* Avatar Inisial */
+.user-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user-avatar-initials {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2980b9, #16a085);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.35);
+}
+
+.active-indicator {
+  background: #2ecc71 !important;
+}
+
+/* Badge "Komentar Saya" */
+.user-own-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #2980b9, #16a085);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ── Tombol Hapus ───────────────────────────── */
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(231, 76, 60, 0.08) !important;
+  color: #e74c3c !important;
+  border: 1px solid rgba(231, 76, 60, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 5px 12px !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  transition: all 0.25s ease !important;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: rgba(231, 76, 60, 0.18) !important;
+  border-color: rgba(231, 76, 60, 0.6) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.25) !important;
+}
+
+.delete-btn i {
+  font-size: 0.85rem;
+}
+
+/* ── Divider "Komentar Saya" ────────────────── */
+.user-comments-divider {
+  display: flex;
+  align-items: center;
+  margin: 28px 0 16px;
+  gap: 12px;
+}
+
+.user-comments-divider::before,
+.user-comments-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(41, 128, 185, 0.4), transparent);
+}
+
+.user-comments-divider span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2980b9;
+  white-space: nowrap;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(41, 128, 185, 0.08);
+  border: 1px solid rgba(41, 128, 185, 0.2);
+}
+
+/* ── Comment Highlight Animation ───────────── */
+.comment-highlight {
+  animation: commentPulse 0.6s ease 0s 3 alternate;
+}
+
+@keyframes commentPulse {
+  from { box-shadow: 0 0 0 0 rgba(41, 128, 185, 0); }
+  to   { box-shadow: 0 0 0 8px rgba(41, 128, 185, 0.2); }
+}
+
+/* ── Delete Confirmation Modal ──────────────── */
+.gs-delete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gs-delete-overlay.visible {
+  opacity: 1;
+}
+
+.gs-delete-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 32px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gs-delete-overlay.visible .gs-delete-modal {
+  transform: scale(1) translateY(0);
+}
+
+.gs-delete-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.gs-delete-icon i {
+  font-size: 1.8rem;
+  color: #e74c3c;
+}
+
+.gs-delete-modal h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.gs-delete-modal p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.gs-delete-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.gs-btn-cancel {
+  flex: 1;
+  padding: 11px 20px;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gs-btn-cancel:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.gs-btn-delete {
+  flex: 1;
+  padding: 11px 20px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.35);
+}
+
+.gs-btn-delete:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.45);
+}
+
+/* ── Toast Notification ─────────────────────── */
+.gs-toast {
+  position: fixed;
+  bottom: 110px;
+  right: 24px;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.gs-toast.visible {
+  transform: translateX(0);
+}
+
+.gs-toast-success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.gs-toast-error {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.gs-toast i {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ── WhatsApp Floating Button ───────────────── */
+.gs-wa-float {
+  position: fixed;
+  bottom: 74px;
+  right: 15px;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.gs-wa-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.gs-wa-btn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.35);
+  animation: waPulse 2s ease-in-out infinite;
+}
+
+@keyframes waPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%       { transform: scale(1.18); opacity: 0; }
+}
+
+.gs-wa-float:hover .gs-wa-btn {
+  transform: scale(1.12);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+}
+
+.gs-wa-tooltip {
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  margin-right: 12px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: relative;
+}
+
+.gs-wa-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1a1a2e;
+  border-right: none;
+}
+
+.gs-wa-float:hover .gs-wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .gs-delete-modal {
+    background: #1e2535;
+  }
+  .gs-delete-modal h4 {
+    color: #f1f5f9;
+  }
+  .gs-delete-modal p {
+    color: #94a3b8;
+  }
+  .gs-btn-cancel {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  .gs-btn-cancel:hover {
+    background: #3d4a5e;
+  }
+}

@@ -1,0 +1,40 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  --background-color: #077f46;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 997;
+
+  .logo {
+    line-height: 1;
+
+    img {
+      max-height: 32px;
+      margin-right: 8px;
+    }
+
+    svg {
+      height: 32px;
+      margin-right: 6px;
+      color: color-mix(in srgb, var(--default-color), transparent 50%);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 0;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+  }
+
+  .scrolled & {
+    box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,476 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Agent Profile Section
+--------------------------------------------------------------*/
+.agent-profile {
+
+  // Hero Profile Header
+  .agent-photo-wrapper {
+    position: relative;
+
+    .agent-photo {
+      border-radius: 15px;
+      box-shadow: 0 15px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+    }
+
+    .agent-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 8px 15px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .agent-info {
+    .agent-name {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .agent-title {
+      font-size: 1.25rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .agent-tagline {
+      font-size: 1.1rem;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      font-style: italic;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+  }
+
+  .contact-info-hero {
+    margin-bottom: 2rem;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.8rem;
+
+      i {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+        width: 20px;
+      }
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    .btn {
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &.btn-primary {
+        background: var(--accent-color);
+        border: 2px solid var(--accent-color);
+        color: var(--contrast-color);
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), black 10%);
+          border-color: color-mix(in srgb, var(--accent-color), black 10%);
+          transform: translateY(-2px);
+        }
+      }
+
+      &.btn-outline {
+        background: transparent;
+        border: 2px solid var(--accent-color);
+        color: var(--accent-color);
+
+        &:hover {
+          background: var(--accent-color);
+          color: var(--contrast-color);
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  // Stats Section
+  .stats-section {
+    background: var(--surface-color);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    margin: 4rem 0;
+    box-shadow: 0 10px 25px color-mix(in srgb, var(--default-color), transparent 90%);
+
+    .stat-item {
+      text-align: center;
+
+      .stat-icon {
+        width: 80px;
+        height: 80px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        color: var(--accent-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--heading-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        font-weight: 500;
+      }
+
+      &:hover .stat-icon {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  // Sidebar Information
+  .sidebar-info {
+
+    .contact-card,
+    .specialties-card,
+    .certifications-card {
+      background: var(--surface-color);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px color-mix(in srgb, var(--default-color), transparent 92%);
+
+      h4 {
+        margin-bottom: 1.5rem;
+        color: var(--heading-color);
+        font-weight: 600;
+      }
+    }
+
+    .contact-details {
+      .contact-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 1.5rem;
+
+        i {
+          color: var(--accent-color);
+          font-size: 1.2rem;
+          margin-top: 3px;
+          width: 20px;
+        }
+
+        strong {
+          display: block;
+          margin-bottom: 5px;
+          color: var(--heading-color);
+        }
+
+        p {
+          margin: 0;
+          color: color-mix(in srgb, var(--default-color), transparent 20%);
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 1.5rem;
+
+      a {
+        width: 40px;
+        height: 40px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        color: var(--accent-color);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: var(--accent-color);
+          color: var(--contrast-color);
+          transform: translateY(-3px);
+        }
+      }
+    }
+
+    .specialty-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .specialty-tag {
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        color: var(--accent-color);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+
+      i {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+      }
+
+      span {
+        font-size: 0.95rem;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+      }
+    }
+  }
+
+  // Bio Content
+  .bio-content {
+
+    h3,
+    h4 {
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: color-mix(in srgb, var(--default-color), transparent 10%);
+    }
+
+    .achievements {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 0.8rem;
+          color: color-mix(in srgb, var(--default-color), transparent 10%);
+
+          &:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials Section
+  .testimonials-section {
+    .section-heading {
+      font-size: 2.5rem;
+      color: var(--heading-color);
+      font-weight: 600;
+    }
+
+    .swiper-wrapper {
+      height: auto !important;
+    }
+
+    .testimonial-card {
+      background: var(--surface-color);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px color-mix(in srgb, var(--default-color), transparent 92%);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .testimonial-content {
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+
+        p {
+          font-style: italic;
+          line-height: 1.6;
+          margin: 0;
+          color: color-mix(in srgb, var(--default-color), transparent 10%);
+          position: relative;
+
+          &:before {
+            content: "";
+            font-size: 3rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -10px;
+            left: -15px;
+            font-family: serif;
+          }
+        }
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .author-photo {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .author-info {
+          h5 {
+            margin: 0;
+            font-weight: 600;
+            color: var(--heading-color);
+          }
+
+          span {
+            color: color-mix(in srgb, var(--default-color), transparent 40%);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .swiper-pagination {
+      margin-top: 2rem;
+
+      .swiper-pagination-bullet {
+        background: color-mix(in srgb, var(--accent-color), transparent 70%);
+
+        &.swiper-pagination-bullet-active {
+          background: var(--accent-color);
+        }
+      }
+    }
+  }
+
+  // Contact Form Section
+  .contact-form-section {
+    background: var(--surface-color);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 4rem;
+    box-shadow: 0 15px 35px color-mix(in srgb, var(--default-color), transparent 88%);
+
+    @media (max-width: 768px) {
+      padding: 2rem 1.5rem;
+    }
+
+    h3 {
+      color: var(--heading-color);
+      font-weight: 600;
+      font-size: 2.2rem;
+    }
+
+    .php-email-form {
+      .form-label {
+        font-weight: 600;
+        color: var(--heading-color);
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        color: var(--default-color);
+        background-color: var(--background-color);
+        font-size: 15px;
+        border: 2px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        border-radius: 8px;
+        padding: 12px 15px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: var(--accent-color);
+          box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
+        }
+
+        &::placeholder {
+          color: color-mix(in srgb, var(--default-color), transparent 60%);
+        }
+      }
+
+      .btn {
+        background: var(--accent-color);
+        border: none;
+        color: var(--contrast-color);
+        padding: 15px 40px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), black 10%);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}

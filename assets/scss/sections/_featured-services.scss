@@ -1,0 +1,288 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+.featured-services {
+  .service-card {
+    background: var(--surface-color);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 280px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 20%));
+      transition: width 0.4s ease;
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px color-mix(in srgb, var(--default-color), transparent 85%);
+
+      &::before {
+        width: 4px;
+      }
+
+      .service-visual img {
+        transform: scale(1.05);
+      }
+
+      .service-icon {
+        background: var(--accent-color);
+        transform: scale(1.1);
+
+        i {
+          color: var(--contrast-color);
+        }
+      }
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+
+      i {
+        font-size: 28px;
+        color: var(--accent-color);
+        transition: color 0.3s ease;
+      }
+    }
+
+    .service-info {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 1.3;
+
+        a {
+          color: var(--heading-color);
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .service-highlights {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          padding: 4px 0;
+          font-size: 14px;
+          color: var(--default-color);
+
+          i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--accent-color);
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: var(--accent-color);
+          transform: translateX(4px);
+
+          &::after {
+            width: 100%;
+          }
+
+          i {
+            transform: translate(3px, -3px);
+          }
+        }
+
+        i {
+          font-size: 16px;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+
+    .service-visual {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+    }
+  }
+
+  .btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--contrast-color), transparent 80%), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      background: color-mix(in srgb, var(--accent-color), black 15%);
+      color: var(--contrast-color);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-color), transparent 60%);
+
+      &::before {
+        left: 100%;
+      }
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+
+    i {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .service-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 28px 24px;
+      min-height: auto;
+
+      .service-visual {
+        width: 100px;
+        height: 100px;
+        align-self: center;
+      }
+
+      .service-icon {
+        align-self: center;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-card {
+      padding: 24px 20px;
+
+      .service-info {
+        h3 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .service-highlights li {
+          font-size: 13px;
+        }
+      }
+
+      .service-visual {
+        width: 80px;
+        height: 80px;
+      }
+
+      .service-icon {
+        width: 56px;
+        height: 56px;
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .btn-view-all {
+      padding: 16px 28px;
+      font-size: 15px;
+      margin-top: 32px;
+    }
+  }
+}

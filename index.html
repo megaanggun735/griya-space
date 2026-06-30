@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Galeri Properti - GriyaSpace</title>
+  <meta name="description" content="Jelajahi koleksi foto properti premium GriyaSpace. Dari eksterior mewah, interior modern, hingga fasilitas gedung terlengkap.">
+  <meta name="keywords" content="galeri properti, foto rumah, interior mewah, eksterior properti, griyaspace">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════
+       GALLERY PAGE STYLES
+    ══════════════════════════════════════ */
+
+    /* Hero Banner */
+    .gallery-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+
+    .gallery-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(var(--accent-color-rgb, 184, 145, 68), 0.15) 0%,
+        transparent 60%
+      );
+      z-index: 1;
+    }
+
+    .gallery-hero-bg {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      opacity: 0.25;
+      filter: saturate(0.4);
+    }
+
+    .gallery-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .gallery-hero-content .badge-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(var(--accent-color-rgb, 184, 145, 68), 0.2);
+      border: 1px solid rgba(var(--accent-color-rgb, 184, 145, 68), 0.4);
+      color: var(--accent-color);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .gallery-hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .gallery-hero-content h1 span {
+      color: var(--accent-color);
+    }
+
+    .gallery-hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .gallery-hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .gallery-hero-stats .stat {
+      text-align: center;
+    }
+
+    .gallery-hero-stats .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      line-height: 1;
+    }
+
+    .gallery-hero-stats .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Filter Tabs ── */
+    .gallery-filter-wrapper {
+      background: var(--surface-color);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .gallery-filter-tabs {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+      background: transparent;
+      color: var(--default-color);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.28s ease;
+    }
+
+    .filter-tab:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .filter-tab.active {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(var(--accent-color-rgb, 184, 145, 68), 0.35);
+    }
+
+    .filter-tab .tab-count {
+      background: rgba(255,255,255,0.25);
+      padding: 0.1rem 0.45rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    .filter-tab:not(.active) .tab-count {
+      background: color-mix(in srgb, var(--default-color), transparent 88%);
+    }
+
+    /* ── Gallery Grid ── */
+    .gallery-section {
+      padding: 3rem 0 5rem;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 992px) {
+      .gallery-item { flex: 0 0 calc(50% - 0.625rem) !important; max-width: calc(50% - 0.625rem); }
+    }
+    @media (max-width: 576px) {
+      .gallery-item { flex: 0 0 100% !important; max-width: 100%; }
+    }
+
+    .gallery-item {
+      flex: 0 0 calc(33.333% - 0.834rem);
+      max-width: calc(33.333% - 0.834rem);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: block;
+    }
+
+    .gallery-item.hidden {
+      display: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.15) 50%,
+        transparent 100%
+      );
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.4rem;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-info {
+      transform: translateY(10px);
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover .gallery-item-info {
+      transform: translateY(0);
+    }
+
+    .gallery-item-category {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-item-title {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .gallery-item-zoom {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-zoom {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ── Lightbox Modal ── */
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 1200px;
+      width: 95vw;
+      max-height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-wrapper {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      max-height: 85vh;
+    }
+
+    .lightbox-img-wrapper img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-info-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      padding: 1.5rem 1.5rem 1.2rem;
+      color: #fff;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+
+    .lightbox-counter {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 10;
+    }
+
+    /* ── CTA Section ── */
+    .gallery-cta {
+      background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), #000 25%) 100%);
+      padding: 4.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .gallery-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .gallery-cta h2 {
+      color: #fff;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-cta p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: var(--accent-color);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn-primary:hover {
+      background: var(--accent-color);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .cta-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all 0.25s ease;
+    }
+
+    .cta-btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Entrance animation */
+    .gallery-item {
+      animation: galleryFadeIn 0.5s ease both;
+    }
+
+    @keyframes galleryFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="gallery-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="bgCarrier" stroke-width="0"></g>
+          <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="iconCarrier">
+            <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M4 22V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M20 9.5V13.5M20 22V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="currentColor" stroke-width="1.5"></path>
+          </g>
+        </svg>
+        <h1 class="sitename">GriyaSpace</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="properties.html">Properti</a></li>
+          <li><a href="services.html">Layanan</a></li>
+          <li><a href="galery.html" class="active">Galeri</a></li>
+          <li><a href="blog.html">Artikel</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ══════════════════════════════════════
+         GALLERY HERO BANNER
+    ══════════════════════════════════════ -->
+    <div class="gallery-hero">
+      <div class="gallery-hero-bg">
+        <img src="assets/img/real-estate/property-exterior-2.webp" alt="">
+        <img src="assets/img/real-estate/property-interior-4.webp" alt="">
+        <img src="assets/img/real-estate/property-exterior-3.webp" alt="">
+        <img src="assets/img/real-estate/property-interior-8.webp" alt="">
+      </div>
+      <div class="gallery-hero-content">
+        <span class="badge-label">
+          <i class="bi bi-images"></i>
+          Galeri Foto Properti
+        </span>
+        <h1>Koleksi Properti <span>Premium</span> Kami</h1>
+        <p>Jelajahi ribuan foto properti eksklusif — dari eksterior memukau hingga interior mewah yang menawan.</p>
+        <div class="gallery-hero-stats">
+          <div class="stat">
+            <div class="stat-number">30+</div>
+            <div class="stat-label">Foto Pilihan</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Kategori</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Foto Asli</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         FILTER TABS (STICKY)
+    ══════════════════════════════════════ -->
+    <div class="gallery-filter-wrapper">
+      <div class="container">
+        <div class="gallery-filter-tabs">
+          <button class="filter-tab active" data-filter="all" id="filter-all">
+            <i class="bi bi-grid-3x3-gap"></i>
+            Semua
+            <span class="tab-count" id="count-all">30</span>
+          </button>
+          <button class="filter-tab" data-filter="eksterior" id="filter-eksterior">
+            <i class="bi bi-house"></i>
+            Eksterior
+            <span class="tab-count" id="count-eksterior">9</span>
+          </button>
+          <button class="filter-tab" data-filter="interior" id="filter-interior">
+            <i class="bi bi-lamp"></i>
+            Interior
+            <span class="tab-count" id="count-interior">9</span>
+          </button>
+          <button class="filter-tab" data-filter="fasilitas" id="filter-fasilitas">
+            <i class="bi bi-stars"></i>
+            Fasilitas
+            <span class="tab-count" id="count-fasilitas">4</span>
+          </button>
+          <button class="filter-tab" data-filter="lingkungan" id="filter-lingkungan">
+            <i class="bi bi-geo-alt"></i>
+            Lingkungan
+            <span class="tab-count" id="count-lingkungan">8</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         GALLERY GRID
+    ══════════════════════════════════════ -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- EKSTERIOR -->
+          <div class="gallery-item" data-category="eksterior" data-title="Vila Mewah Kebayoran" data-index="0">
+            <img src="assets/img/real-estate/property-exterior-2.webp" alt="Vila Mewah Kebayoran" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Vila Mewah Kebayoran</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Ruang Tamu Penthouse" data-index="1">
+            <img src="assets/img/real-estate/property-interior-4.webp" alt="Ruang Tamu Penthouse" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Ruang Tamu Penthouse</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Cluster Modern Serpong" data-index="2">
+            <img src="assets/img/real-estate/property-exterior-3.webp" alt="Cluster Modern Serpong" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Cluster Modern Serpong</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Master Bedroom Suite" data-index="3">
+            <img src="assets/img/real-estate/property-interior-8.webp" alt="Master Bedroom Suite" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Master Bedroom Suite</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="fasilitas" data-title="Dapur Gourmet Premium" data-index="4">
+            <img src="assets/img/real-estate/features-2.webp" alt="Dapur Gourmet Premium" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Fasilitas</span>
+                <p class="gallery-item-title">Dapur Gourmet Premium</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Apartemen High-Rise Kuningan" data-index="5">
+            <img src="assets/img/real-estate/property-exterior-7.webp" alt="Apartemen High-Rise Kuningan" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Apartemen High-Rise Kuningan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Living Room View Panoramik" data-index="6">
+            <img src="assets/img/real-estate/property-interior-7.webp" alt="Living Room View Panoramik" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Living Room View Panoramik</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Townhouse Pondok Indah" data-index="7">
+            <img src="assets/img/real-estate/property-exterior-4.webp" alt="Townhouse Pondok Indah" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Townhouse Pondok Indah</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="fasilitas" data-title="Kamar Mandi Premium" data-index="8">
+            <img src="assets/img/real-estate/features-3.webp" alt="Kamar Mandi Premium" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Fasilitas</span>
+                <p class="gallery-item-title">Kamar Mandi Premium</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Dining Area Eksklusif" data-index="9">
+            <img src="assets/img/real-estate/property-interior-2.webp" alt="Dining Area Eksklusif" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Dining Area Eksklusif</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Rumah Minimalis BSD" data-index="10">
+            <img src="assets/img/real-estate/property-exterior-1.webp" alt="Rumah Minimalis BSD" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Rumah Minimalis BSD</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Bedroom Anak Modern" data-index="11">
+            <img src="assets/img/real-estate/property-interior-5.webp" alt="Bedroom Anak Modern" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Bedroom Anak Modern</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Cluster Perumahan Premium" data-index="12">
+            <img src="assets/img/real-estate/property-exterior-5.webp" alt="Cluster Perumahan Premium" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Cluster Perumahan Premium</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="fasilitas" data-title="Rooftop Garden & Teras" data-index="13">
+            <img src="assets/img/real-estate/features-5.webp" alt="Rooftop Garden & Teras" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Fasilitas</span>
+                <p class="gallery-item-title">Rooftop Garden & Teras</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Study Room / Home Office" data-index="14">
+            <img src="assets/img/real-estate/property-interior-6.webp" alt="Study Room / Home Office" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Study Room / Home Office</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Eksterior Villa Canggu" data-index="15">
+            <img src="assets/img/real-estate/property-exterior-8.webp" alt="Eksterior Villa Canggu" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Eksterior Villa Canggu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Walk-in Closet Utama" data-index="16">
+            <img src="assets/img/real-estate/property-interior-1.webp" alt="Walk-in Closet Utama" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Walk-in Closet Utama</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Gedung Kondominium Modern" data-index="17">
+            <img src="assets/img/real-estate/property-exterior-9.webp" alt="Gedung Kondominium Modern" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Gedung Kondominium Modern</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Showcase Perumahan Mewah" data-index="18">
+            <img src="assets/img/real-estate/showcase-3.webp" alt="Showcase Perumahan Mewah" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Showcase Perumahan Mewah</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="fasilitas" data-title="Area Gym & Kebugaran" data-index="19">
+            <img src="assets/img/real-estate/features-1.webp" alt="Area Gym & Kebugaran" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Fasilitas</span>
+                <p class="gallery-item-title">Area Gym & Kebugaran</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Denah Penthouse Lantai 15" data-index="20">
+            <img src="assets/img/real-estate/property-interior-9.webp" alt="Denah Penthouse Lantai 15" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Denah Penthouse Lantai 15</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Area Kolam Renang Outdoor" data-index="21">
+            <img src="assets/img/real-estate/property-exterior-1.webp" alt="Area Kolam Renang Outdoor" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Area Kolam Renang Outdoor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Ruko Komersial Strategis" data-index="22">
+            <img src="assets/img/real-estate/property-exterior-2.webp" alt="Ruko Komersial Strategis" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Ruko Komersial Strategis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Kamar Tidur Tamu VIP" data-index="23">
+            <img src="assets/img/real-estate/property-interior-5.webp" alt="Kamar Tidur Tamu VIP" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Kamar Tidur Tamu VIP</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Taman Komplek Eksklusif" data-index="24">
+            <img src="assets/img/real-estate/property-exterior-4.webp" alt="Taman Komplek Eksklusif" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Taman Komplek Eksklusif</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Townhouse Asri Bogor" data-index="25">
+            <img src="assets/img/real-estate/property-exterior-5.webp" alt="Townhouse Asri Bogor" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Townhouse Asri Bogor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Balkon Panoramik Kota" data-index="26">
+            <img src="assets/img/real-estate/property-interior-7.webp" alt="Balkon Panoramik Kota" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Balkon Panoramik Kota</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="lingkungan" data-title="Area Parkir & Lobby" data-index="27">
+            <img src="assets/img/real-estate/property-exterior-9.webp" alt="Area Parkir & Lobby" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Lingkungan</span>
+                <p class="gallery-item-title">Area Parkir & Lobby</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="eksterior" data-title="Perumahan Cluster Depok" data-index="28">
+            <img src="assets/img/real-estate/property-exterior-3.webp" alt="Perumahan Cluster Depok" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Eksterior</span>
+                <p class="gallery-item-title">Perumahan Cluster Depok</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-title="Open Kitchen Modern" data-index="29">
+            <img src="assets/img/real-estate/property-interior-2.webp" alt="Open Kitchen Modern" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></span>
+              <div class="gallery-item-info">
+                <span class="gallery-item-category">Interior</span>
+                <p class="gallery-item-title">Open Kitchen Modern</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /gallery-grid -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA SECTION
+    ══════════════════════════════════════ -->
+    <section class="gallery-cta">
+      <div class="container">
+        <h2>Tertarik dengan Properti yang Anda Lihat?</h2>
+        <p>Hubungi agen kami sekarang dan jadwalkan kunjungan langsung ke properti pilihan Anda.</p>
+        <div class="cta-btn-group">
+          <a href="properties.html" class="cta-btn-primary">
+            <i class="bi bi-house-heart"></i>
+            Lihat Semua Properti
+          </a>
+          <a href="contact.html" class="cta-btn-outline">
+            <i class="bi bi-chat-dots"></i>
+            Hubungi Agen Kami
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       LIGHTBOX MODAL
+  ══════════════════════════════════════ -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Foto Properti">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img-wrapper">
+        <img id="lightboxImg" src="" alt="Foto Properti">
+        <div class="lightbox-info-bar">
+          <span id="lightboxCategory" style="background:var(--accent-color);color:#fff;padding:0.2rem 0.7rem;border-radius:50px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;display:inline-block;margin-bottom:0.5rem;"></span>
+          <p id="lightboxTitle" style="color:#fff;font-weight:600;margin:0;font-size:1.05rem;"></p>
+        </div>
+      </div>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 30</div>
+  </div>
+
+  <footer id="footer" class="footer accent-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">GriyaSpace</span>
+          </a>
+          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik di seluruh Indonesia secara aman, transparan, dan profesional.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Tautan Penting</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="terms.html">Syarat &amp; Ketentuan</a></li>
+            <li><a href="privacy.html">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+                            <div class="col-lg-2 col-6 footer-links">
+            <h4>Layanan Kami</h4>
+            <ul>
+              <li><a href="properties.html">Pencarian Properti</a></li>
+              <li><a href="service-details.html">Penilaian Properti</a></li>
+              <li><a href="properties.html">Sewa Properti</a></li>
+              <li><a href="contact.html">Konsultasi Investasi</a></li>
+              <li><a href="contact.html">Pengajuan KPR</a></li>
+            </ul>
+          </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Hubungi Kami</h4>
+          <p>Jl. Jend. Sudirman Kav. 21</p>
+          <p>Jakarta Selatan, DKI Jakarta 12190</p>
+          <p>Indonesia</p>
+          <p class="mt-4"><strong>Telepon:</strong> <span>+62 21 5555 1234</span></p>
+          <p><strong>Email:</strong> <span>info@griyaspace.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">GriyaSpace</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Gallery JS -->
+  <script>
+    (function () {
+      const filterTabs  = document.querySelectorAll('.filter-tab');
+      const items       = document.querySelectorAll('.gallery-item');
+      const lightbox    = document.getElementById('galleryLightbox');
+      const lbImg       = document.getElementById('lightboxImg');
+      const lbTitle     = document.getElementById('lightboxTitle');
+      const lbCategory  = document.getElementById('lightboxCategory');
+      const lbCounter   = document.getElementById('lightboxCounter');
+      const lbClose     = document.getElementById('lightboxClose');
+      const lbPrev      = document.getElementById('lightboxPrev');
+      const lbNext      = document.getElementById('lightboxNext');
+
+      let currentFilter  = 'all';
+      let visibleItems   = [];
+      let currentLbIndex = 0;
+
+      // ── Filter Logic ──────────────────────────
+      function applyFilter(filter) {
+        currentFilter = filter;
+        visibleItems  = [];
+
+        items.forEach((item) => {
+          const cat = item.dataset.category;
+          const show = filter === 'all' || cat === filter;
+          item.style.display = show ? '' : 'none';
+          if (show) visibleItems.push(item);
+        });
+
+        // Re-animate visible items
+        visibleItems.forEach((item, i) => {
+          item.style.animation = 'none';
+          item.offsetHeight; // reflow
+          item.style.animation = `galleryFadeIn 0.4s ease ${i * 0.04}s both`;
+        });
+      }
+
+      filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          applyFilter(tab.dataset.filter);
+        });
+      });
+
+      // Initial filter
+      applyFilter('all');
+
+      // ── Lightbox Logic ─────────────────────────
+      function openLightbox(item) {
+        currentLbIndex = visibleItems.indexOf(item);
+        showLightboxItem(currentLbIndex);
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function showLightboxItem(index) {
+        const item  = visibleItems[index];
+        const img   = item.querySelector('img');
+        lbImg.src          = img.src;
+        lbImg.alt          = img.alt;
+        lbTitle.textContent    = item.dataset.title || img.alt;
+        lbCategory.textContent = item.dataset.category ? item.dataset.category.charAt(0).toUpperCase() + item.dataset.category.slice(1) : '';
+        lbCounter.textContent  = `${index + 1} / ${visibleItems.length}`;
+        currentLbIndex = index;
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      items.forEach((item) => {
+        item.addEventListener('click', () => openLightbox(item));
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lbPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const prev = (currentLbIndex - 1 + visibleItems.length) % visibleItems.length;
+        showLightboxItem(prev);
+      });
+
+      lbNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const next = (currentLbIndex + 1) % visibleItems.length;
+        showLightboxItem(next);
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft')  lbPrev.click();
+        if (e.key === 'ArrowRight') lbNext.click();
+      });
+
+      // Touch swipe support
+      let touchStartX = 0;
+      lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+      lightbox.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (diff > 50)  lbNext.click();
+        if (diff < -50) lbPrev.click();
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
+
+

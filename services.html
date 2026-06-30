@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Layanan - GriyaSpace</title>
+  <meta name="description" content="Layanan properti profesional dari GriyaSpace. Kami menyediakan jasa beli rumah impian, penjualan properti dengan nilai maksimal, sewa premium, dan konsultasi investasi.">
+  <meta name="keywords" content="layanan properti, beli rumah, jual rumah, sewa apartemen, konsultasi kpr, griyaspace">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       Fix alignment & proporsi service cards
+    ══════════════════════════════════════════════ */
+
+    /* Kolom kiri & kanan harus sama tinggi */
+    .services .row.gy-5 {
+      align-items: stretch;
+    }
+    .services .col-xl-6 {
+      display: flex;
+    }
+
+    /* Card utama: row, full-width, stretch */
+    .service-block {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    /* Area kiri (nomor + teks + tombol) : 62% lebar */
+    .service-content {
+      display: flex;
+      flex: 0 0 62%;
+      max-width: 62%;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    /* Area kanan (gambar) : 38% lebar */
+    .service-image {
+      flex: 0 0 38%;
+      max-width: 38%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Badge nomor 01-04 — bulat sempurna, tidak gepeng */
+    .service-number {
+      flex-shrink: 0;
+      width: 52px  !important;
+      height: 52px !important;
+      min-width: 52px;
+      min-height: 52px;
+      border-radius: 50% !important;
+      aspect-ratio: 1 / 1;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      padding: 0 !important;
+    }
+
+    /* Info (h4, p, ul, btn) — flex column, tombol di bawah */
+    .service-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Konten tidak menyusut */
+    .service-info h4,
+    .service-info p,
+    .service-features {
+      flex-shrink: 0;
+    }
+    .service-features {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Tombol selalu menempel di bawah — sejajar antar kartu */
+    .service-info .service-btn {
+      margin-top: auto;
+      align-self: flex-start;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body class="services-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="bgCarrier" stroke-width="0"></g>
+          <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="iconCarrier">
+            <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M4 22V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M20 9.5V13.5M20 22V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="currentColor" stroke-width="1.5"></path>
+          </g>
+        </svg>
+        <h1 class="sitename">GriyaSpace</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="properties.html">Properti</a></li>
+          <li><a href="services.html" class="active">Layanan</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="blog.html">Artikel</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Layanan</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="current">Layanan</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="service-block">
+              <div class="service-content">
+                <div class="service-number">01</div>
+                <div class="service-info">
+                  <h4>Beli Rumah Impian Anda</h4>
+                  <p>Temukan hunian yang pas untuk masa depan Anda bersama keluarga. Kami siap mendampingi Anda di setiap langkah transaksi secara transparan dan aman.</p>
+                  <ul class="service-features">
+                    <li><i class="bi bi-check-circle"></i> Pencarian Properti Kustom</li>
+                    <li><i class="bi bi-check-circle"></i> Analisis Lingkungan Sekitar</li>
+                    <li><i class="bi bi-check-circle"></i> Pendampingan Legalitas & KPR</li>
+                  </ul>
+                  <a href="properties.html" class="service-btn">
+                    Mulai Pencarian <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="service-image">
+                <img src="assets/img/real-estate/property-exterior-3.webp" alt="Buy Dream Home" class="img-fluid">
+                <div class="image-overlay">
+                  <i class="bi bi-house-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Block -->
+
+          <div class="col-xl-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="service-block">
+              <div class="service-content">
+                <div class="service-number">02</div>
+                <div class="service-info">
+                  <h4>Jual Properti Nilai Maksimal</h4>
+                  <p>Pasarkan properti Anda ke target pasar yang tepat dengan strategi pemasaran modern untuk mendapatkan harga terbaik dalam waktu yang relatif singkat.</p>
+                  <ul class="service-features">
+                    <li><i class="bi bi-check-circle"></i> Foto & Video Properti Profesional</li>
+                    <li><i class="bi bi-check-circle"></i> Pemasaran Multi-Channel Strategis</li>
+                    <li><i class="bi bi-check-circle"></i> Negosiasi Ahli & Profesional</li>
+                  </ul>
+                  <a href="service-details.html" class="service-btn">
+                    Dapatkan Estimasi Harga <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="service-image">
+                <img src="assets/img/real-estate/property-exterior-7.webp" alt="Sell Property" class="img-fluid">
+                <div class="image-overlay">
+                  <i class="bi bi-currency-dollar"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Block -->
+
+          <div class="col-xl-6" data-aos="fade-right" data-aos-delay="400">
+            <div class="service-block">
+              <div class="service-content">
+                <div class="service-number">03</div>
+                <div class="service-info">
+                  <h4>Sewa Properti Premium</h4>
+                  <p>Temukan properti disewakan dengan kualitas terbaik mulai dari apartemen mewah tengah kota, rumah hunian asri, hingga ruko komersial strategis.</p>
+                  <ul class="service-features">
+                    <li><i class="bi bi-check-circle"></i> Seleksi Ketat Calon Penyewa</li>
+                    <li><i class="bi bi-check-circle"></i> Syarat Sewa Fleksibel & Mudah</li>
+                    <li><i class="bi bi-check-circle"></i> Dukungan Layanan 24/7</li>
+                  </ul>
+                  <a href="properties.html" class="service-btn">
+                    Lihat Properti Sewa <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="service-image">
+                <img src="assets/img/real-estate/property-interior-5.webp" alt="Premium Rentals" class="img-fluid">
+                <div class="image-overlay">
+                  <i class="bi bi-key"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Block -->
+
+          <div class="col-xl-6" data-aos="fade-left" data-aos-delay="500">
+            <div class="service-block">
+              <div class="service-content">
+                <div class="service-number">04</div>
+                <div class="service-info">
+                  <h4>Konsultasi Investasi Properti</h4>
+                  <p>Konsultasikan rencana investasi real estat Anda bersama tim analis profesional kami untuk meminimalkan risiko dan memaksimalkan ROI.</p>
+                  <ul class="service-features">
+                    <li><i class="bi bi-check-circle"></i> Analisis Pasar Real Estat Mendalam</li>
+                    <li><i class="bi bi-check-circle"></i> Proyeksi Keuntungan (ROI) Akurat</li>
+                    <li><i class="bi bi-check-circle"></i> Diversifikasi Portofolio Properti</li>
+                  </ul>
+                  <a href="contact.html" class="service-btn">
+                    Jadwalkan Konsultasi <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="service-image">
+                <img src="assets/img/real-estate/features-2.webp" alt="Investment Consulting" class="img-fluid">
+                <div class="image-overlay">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Block -->
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="600">
+            <div class="cta-section">
+              <div class="cta-content">
+                <h3>Siap Melangkah Menuju Properti Impian?</h3>
+                <p>Hubungi tim profesional kami hari ini untuk konsultasi gratis dan mulailah perjalanan properti Anda bersama GriyaSpace secara aman dan nyaman.</p>
+                <div class="cta-buttons">
+                  <a href="contact.html" class="btn-primary">Hubungi Kami Sekarang</a>
+                  <a href="tel:+622155551234" class="btn-secondary">
+                    <i class="bi bi-telephone"></i> Telepon Sekarang
+                  </a>
+                </div>
+              </div>
+              <div class="cta-stats">
+                <div class="stat-item">
+                  <div class="stat-number">500+</div>
+                  <div class="stat-label">Klien Puas</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">15+</div>
+                  <div class="stat-label">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Tingkat Kesuksesan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">GriyaSpace</span>
+          </a>
+          <p>Solusi terpercaya untuk kebutuhan properti Anda. Menyediakan layanan jual, beli, dan sewa properti terbaik di seluruh Indonesia secara aman, transparan, dan profesional.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Tautan Penting</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="terms.html">Syarat & Ketentuan</a></li>
+            <li><a href="privacy.html">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+                            <div class="col-lg-2 col-6 footer-links">
+            <h4>Layanan Kami</h4>
+            <ul>
+              <li><a href="properties.html">Pencarian Properti</a></li>
+              <li><a href="service-details.html">Penilaian Properti</a></li>
+              <li><a href="properties.html">Sewa Properti</a></li>
+              <li><a href="contact.html">Konsultasi Investasi</a></li>
+              <li><a href="contact.html">Pengajuan KPR</a></li>
+            </ul>
+          </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Hubungi Kami</h4>
+          <p>Jl. Jend. Sudirman Kav. 21</p>
+          <p>Jakarta Selatan, DKI Jakarta 12190</p>
+          <p>Indonesia</p>
+          <p class="mt-4"><strong>Telepon:</strong> <span>+62 21 5555 1234</span></p>
+          <p><strong>Email:</strong> <span>info@griyaspace.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">GriyaSpace</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
